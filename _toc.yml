@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: src/index
+chapters:
+  - file: src/plone6-presentation
+  - file: src/plone6-docker
+  - file: src/plone6-content-management
+  - file: src/plone6-content-rules
+  - file: src/plone6-users-and-groups
+  - file: src/plone6-roles
+  - file: src/plone6-content-types
+  - file: src/plone6-workflows
+  - file: src/plone6-products
+  - file: src/plone6-restapi

@@ -1,0 +1,941 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Gestion de contenu &#8212; Introduction à Plone 6 Classic UI</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Actions automatiques (règles)" href="plone6-content-rules.html" />
+    <link rel="prev" title="Installation avec Docker" href="plone6-docker.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/plone6-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction à Plone 6 Classic UI</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Structure du cours
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-presentation.html">
+   Présentation de Plone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-docker.html">
+   Installation avec Docker
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Gestion de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-rules.html">
+   Actions automatiques (règles)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-users-and-groups.html">
+   Utilisateurs et Groupes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-roles.html">
+   Permissions et Rôles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-types.html">
+   Nouveau types de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-workflows.html">
+   Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-products.html">
+   Extensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-restapi.html">
+   REST API
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-content-management.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/src/plone6-content-management.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configurations-de-base">
+   Configurations de base
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixer-le-francais-comme-langue-d-interface-du-site">
+     Fixer le français comme langue d’interface du site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurer-l-envoi-de-mail-a-partir-du-site">
+     Configurer l’envoi de mail à partir du site
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quels-sont-les-types-de-contenus-disponibles">
+   Quels sont les types de contenus disponibles ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-ajouter-une-page">
+   Comment ajouter une page ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifier-un-contenu">
+   Modifier un contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifier-les-identifiants">
+     Modifier les identifiants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#versionnement">
+     Versionnement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-formatages">
+     Autres formatages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autres-types-de-contenu-lien-fichier-image">
+   Autres types de contenu : Lien/Fichier/Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commenter-un-contenu">
+   Commenter un contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activer-la-possibilite-de-commenter-des-contenus">
+     Activer la possibilité de commenter des contenus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valeur-par-defaut">
+     Valeur par défaut
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valeur-personnalisee">
+     Valeur personnalisée
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-structurer-le-contenu-du-site-a-l-aide-de-dossiers">
+   Comment structurer le contenu du site à l’aide de dossiers ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-dossier-d-images">
+     Créer un dossier d’images
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-personnaliser-la-navigation">
+   Comment personnaliser la navigation ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-lier-des-contenus-entre-eux">
+   Comment lier des contenus entre eux ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liens-hypertexte-dans-le-texte">
+     Liens hypertexte dans le texte
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenus-correles">
+     Contenus correlés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenu-de-type-lien">
+     Contenu de type Lien
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collections">
+     Collections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mots-cles">
+     Mots-clés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#url-alternatives-alias">
+     URL alternatives (alias)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-actualite">
+   Contenu “Actualité”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-evenement">
+   Contenu “Evénement”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenus-presents-a-la-creation-du-site">
+   Contenus présents à la création du site ?
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Gestion de contenu</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configurations-de-base">
+   Configurations de base
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixer-le-francais-comme-langue-d-interface-du-site">
+     Fixer le français comme langue d’interface du site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurer-l-envoi-de-mail-a-partir-du-site">
+     Configurer l’envoi de mail à partir du site
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quels-sont-les-types-de-contenus-disponibles">
+   Quels sont les types de contenus disponibles ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-ajouter-une-page">
+   Comment ajouter une page ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifier-un-contenu">
+   Modifier un contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifier-les-identifiants">
+     Modifier les identifiants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#versionnement">
+     Versionnement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autres-formatages">
+     Autres formatages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autres-types-de-contenu-lien-fichier-image">
+   Autres types de contenu : Lien/Fichier/Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commenter-un-contenu">
+   Commenter un contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activer-la-possibilite-de-commenter-des-contenus">
+     Activer la possibilité de commenter des contenus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valeur-par-defaut">
+     Valeur par défaut
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valeur-personnalisee">
+     Valeur personnalisée
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-structurer-le-contenu-du-site-a-l-aide-de-dossiers">
+   Comment structurer le contenu du site à l’aide de dossiers ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-dossier-d-images">
+     Créer un dossier d’images
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-personnaliser-la-navigation">
+   Comment personnaliser la navigation ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-lier-des-contenus-entre-eux">
+   Comment lier des contenus entre eux ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liens-hypertexte-dans-le-texte">
+     Liens hypertexte dans le texte
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenus-correles">
+     Contenus correlés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenu-de-type-lien">
+     Contenu de type Lien
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collections">
+     Collections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mots-cles">
+     Mots-clés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#url-alternatives-alias">
+     URL alternatives (alias)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-actualite">
+   Contenu “Actualité”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-evenement">
+   Contenu “Evénement”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenus-presents-a-la-creation-du-site">
+   Contenus présents à la création du site ?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="gestion-de-contenu">
+<h1>Gestion de contenu<a class="headerlink" href="#gestion-de-contenu" title="Permalink to this headline">#</a></h1>
+<p><strong>Référence</strong> : <a class="reference external" href="https://5.docs.plone.org/working-with-content">https://5.docs.plone.org/working-with-content</a></p>
+<section id="configurations-de-base">
+<h2>Configurations de base<a class="headerlink" href="#configurations-de-base" title="Permalink to this headline">#</a></h2>
+<section id="fixer-le-francais-comme-langue-d-interface-du-site">
+<h3>Fixer le français comme langue d’interface du site<a class="headerlink" href="#fixer-le-francais-comme-langue-d-interface-du-site" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Site Setup -&gt; Language</p></li>
+</ul>
+</section>
+<section id="configurer-l-envoi-de-mail-a-partir-du-site">
+<h3>Configurer l’envoi de mail à partir du site<a class="headerlink" href="#configurer-l-envoi-de-mail-a-partir-du-site" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Envoi de courriels : utiliser la passerelle SMTP de votre fournisseur de courrier électronique</p></li>
+<li><p>Plone -&gt; Contact : formulaire de contact</p></li>
+</ul>
+</section>
+</section>
+<section id="quels-sont-les-types-de-contenus-disponibles">
+<h2>Quels sont les types de contenus disponibles ?<a class="headerlink" href="#quels-sont-les-types-de-contenus-disponibles" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Paramètres des types de contenus</p></li>
+</ul>
+<p><strong>Types de contenus par défaut</strong></p>
+<ul class="simple">
+<li><p>contenus de base : Page Web, Lien, Fichier, Image, Evénement, Actualité</p></li>
+<li><p>conteneur : Dossier</p></li>
+<li><p>liste : Collection</p></li>
+<li><p>commentaire : Commentaire</p></li>
+</ul>
+</section>
+<section id="comment-ajouter-une-page">
+<h2>Comment ajouter une page ?<a class="headerlink" href="#comment-ajouter-une-page" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Page Web</p></li>
+<li><p>par défaut les “Page Web” sont dans l’état “Privé” (visible uniquement par l’éditeur)</p></li>
+</ul>
+</section>
+<section id="modifier-un-contenu">
+<h2>Modifier un contenu<a class="headerlink" href="#modifier-un-contenu" title="Permalink to this headline">#</a></h2>
+<section id="modifier-les-identifiants">
+<h3>Modifier les identifiants<a class="headerlink" href="#modifier-les-identifiants" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contenu -&gt; Actions -&gt; Renommer</p></li>
+<li><p>Contenu -&gt; Modifier -&gt; Paramètres -&gt; Nom court</p></li>
+</ul>
+</section>
+<section id="versionnement">
+<h3>Versionnement<a class="headerlink" href="#versionnement" title="Permalink to this headline">#</a></h3>
+<p>Plone -&gt; Configuration du site -&gt; Paramètres des types de contenus -&gt; Page Web : Automatique, Manuel, Pas de versionnement</p>
+</section>
+<section id="autres-formatages">
+<h3>Autres formatages<a class="headerlink" href="#autres-formatages" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Formatage du texte</p></li>
+</ul>
+</section>
+</section>
+<section id="autres-types-de-contenu-lien-fichier-image">
+<h2>Autres types de contenu : Lien/Fichier/Image<a class="headerlink" href="#autres-types-de-contenu-lien-fichier-image" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Lien</p>
+<ul>
+<li><p>le lien redirige directement vers la cible quand l’utilisateur n’a pas le droit de modifier le contenu lien</p></li>
+</ul>
+</li>
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Fichier</p></li>
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Image</p>
+<ul>
+<li><p>différentes images de tailles différentes sont créées au chargement de l’image</p>
+<ul>
+<li><p>Plone -&gt; Configuration du site -&gt; Gestion des images</p></li>
+<li><p><my-image-url>/&#64;&#64;images/image/large</p></li>
+<li><p><my-image-url>/&#64;&#64;images/image/preview</p></li>
+<li><p><my-image-url>/&#64;&#64;images/image/mini</p></li>
+</ul>
+</li>
+<li><p>insérer une image dans un document</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="commenter-un-contenu">
+<h2>Commenter un contenu<a class="headerlink" href="#commenter-un-contenu" title="Permalink to this headline">#</a></h2>
+<section id="activer-la-possibilite-de-commenter-des-contenus">
+<h3>Activer la possibilité de commenter des contenus<a class="headerlink" href="#activer-la-possibilite-de-commenter-des-contenus" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Discussion -&gt; Activer globalement les commentaires</p></li>
+</ul>
+</section>
+<section id="valeur-par-defaut">
+<h3>Valeur par défaut<a class="headerlink" href="#valeur-par-defaut" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Paramètres des types de contenus -&gt; <content name> -&gt; Autoriser les commentaires</p></li>
+</ul>
+</section>
+<section id="valeur-personnalisee">
+<h3>Valeur personnalisée<a class="headerlink" href="#valeur-personnalisee" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contenu -&gt; Modifier -&gt; Paramètres -&gt; Autoriser les commentaires</p></li>
+</ul>
+</section>
+</section>
+<section id="comment-structurer-le-contenu-du-site-a-l-aide-de-dossiers">
+<h2>Comment structurer le contenu du site à l’aide de dossiers ?<a class="headerlink" href="#comment-structurer-le-contenu-du-site-a-l-aide-de-dossiers" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Conteneur -&gt; Ajout d’un élément -&gt; Dossier</p></li>
+<li><p>déplacer des contenus : Conteneur -&gt; Contenus -&gt; Couper/Coller</p></li>
+<li><p>vues d’un dossier : Conteneur -&gt; Affichage</p></li>
+</ul>
+<section id="creer-un-dossier-d-images">
+<h3>Créer un dossier d’images<a class="headerlink" href="#creer-un-dossier-d-images" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Conteneur -&gt; Ajout d’un élément -&gt; Dossier</p></li>
+<li><p>Dossier -&gt; Contenus -&gt; Transfert</p></li>
+<li><p>Conteneur -&gt; Affichage -&gt; Vue en vignette</p></li>
+<li><p>restreindre les contenus que l’on peut ajouter : Conteneur -&gt; Ajout d’un élément -&gt; Restriction</p></li>
+<li><p>navigation précédent/suivant : Conteneur -&gt; Modifier -&gt; Paramètres -&gt; Activer la navigation “précédent/suivant”</p></li>
+</ul>
+</section>
+</section>
+<section id="comment-personnaliser-la-navigation">
+<h2>Comment personnaliser la navigation ?<a class="headerlink" href="#comment-personnaliser-la-navigation" title="Permalink to this headline">#</a></h2>
+<p>Une navigation automatique est créée à 3 endroits : onglets, portlet de navigation, plan du site</p>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Navigation</p>
+<ul>
+<li><p>politique globale</p></li>
+<li><p>par défaut, un onglet est créé pour chaque éléments à la racine du site</p></li>
+</ul>
+</li>
+<li><p>désactiver l’onglet “Accueil” : Plone -&gt; Configuration du site -&gt; Actions -&gt; Portal tabs -&gt; Accueil -&gt; Cacher</p></li>
+<li><p>exclure un contenu du menu de navigation : Contenu -&gt; Modifier -&gt; Paramètres -&gt; Exclure de la navigation</p></li>
+<li><p>configurer la portlet de navigation pour afficher le contenu d’un sous-dossier</p></li>
+</ul>
+</section>
+<section id="comment-lier-des-contenus-entre-eux">
+<h2>Comment lier des contenus entre eux ?<a class="headerlink" href="#comment-lier-des-contenus-entre-eux" title="Permalink to this headline">#</a></h2>
+<section id="liens-hypertexte-dans-le-texte">
+<h3>Liens hypertexte dans le texte<a class="headerlink" href="#liens-hypertexte-dans-le-texte" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contenu -&gt; Modifier -&gt; Insérer/modifier un lien interne</p></li>
+</ul>
+</section>
+<section id="contenus-correles">
+<h3>Contenus correlés<a class="headerlink" href="#contenus-correles" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contenu -&gt; Modifier -&gt; Catégorisation -&gt; Contenus correlés</p></li>
+<li><p>respecte les permissions</p></li>
+<li><p>possibilité de lien bidirectionnel</p></li>
+</ul>
+</section>
+<section id="contenu-de-type-lien">
+<h3>Contenu de type Lien<a class="headerlink" href="#contenu-de-type-lien" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Liens</p></li>
+<li><p>un utilisateur qui n’a pas le droit de modifier le contenu Lien est directement redirigé</p></li>
+</ul>
+</section>
+<section id="collections">
+<h3>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">#</a></h3>
+<p>Une collection est une liste automatique de contenus définie par des “critères” de recherche. Les éléments de cette liste sont affichés selon un ordre spécifié.</p>
+<ul class="simple">
+<li><p>exemple : liste des derniers documents ajoutés dans la sous-partie X du site affiché par ordre inverse de création.</p></li>
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Collection</p></li>
+</ul>
+</section>
+<section id="mots-cles">
+<h3>Mots-clés<a class="headerlink" href="#mots-cles" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contenu -&gt; Modifier -&gt; Catégorisation -&gt; Mots clés</p></li>
+<li><p>Rôles qui peuvent ajouter des nouveaux mot-clés : Plone -&gt; Configuration du site -&gt; Site -&gt; Rôles qui peuvent ajouter des mot-clés</p></li>
+</ul>
+</section>
+<section id="url-alternatives-alias">
+<h3>URL alternatives (alias)<a class="headerlink" href="#url-alternatives-alias" title="Permalink to this headline">#</a></h3>
+<p>Un alias est automatiquement créé lors du changement d’identifiant (nom court) d’un contenu.
+On peut également en créer manuellement.</p>
+<ul class="simple">
+<li><p>Content -&gt; Actions -&gt; Gestion des URL</p></li>
+<li><p>Plone -&gt; Configuration du site -&gt; Gestion des URL</p></li>
+</ul>
+</section>
+</section>
+<section id="contenu-actualite">
+<h2>Contenu “Actualité”<a class="headerlink" href="#contenu-actualite" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Actualité</p></li>
+<li><p>“Document” avec image intégrée</p></li>
+<li><p>analyser la collection “News”</p></li>
+</ul>
+</section>
+<section id="contenu-evenement">
+<h2>Contenu “Evénement”<a class="headerlink" href="#contenu-evenement" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone -&gt; Ajout d’un élément -&gt; Evénement</p></li>
+<li><p>Contrôle du calendrier : Plone -&gt; Configuration du site -&gt; Calendrier</p></li>
+<li><p>analyser la collection “Events”</p></li>
+</ul>
+</section>
+<section id="contenus-presents-a-la-creation-du-site">
+<h2>Contenus présents à la création du site ?<a class="headerlink" href="#contenus-presents-a-la-creation-du-site" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>‘Actualités’ (news) : dossier pour les actualités (type “Dossier”) qui contient une ‘Collection’ (aggregator) comme vue par défaut</p></li>
+<li><p>‘Evénements’ (events) : dossier pour les événements (type “Dossier”) qui contient un ‘Collection’ (aggregator) comme vue par défaut</p></li>
+<li><p>‘Membres’ (Members) : dossier pour les espaces personnels dans le cas d’un site communautaire (type “Dossier”) dont la vue par défaut est la <em>browser view</em> ‘&#64;&#64;member-search’</p></li>
+</ul>
+<p>Tous ces contenus peuvent être recréés et ne sont pas nécessaires pour le bon fonctionnement de Plone. Personnellement, je les efface dans un nouveau site.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="plone6-docker.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Installation avec Docker</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plone6-content-rules.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Actions automatiques (règles)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sébastien Verbois<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

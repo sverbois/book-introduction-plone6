@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Structure du cours &#8212; Introduction à Plone 6 Classic UI</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Présentation de Plone" href="plone6-presentation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/plone6-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction à Plone 6 Classic UI</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Structure du cours
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-presentation.html">
+   Présentation de Plone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-docker.html">
+   Installation avec Docker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-management.html">
+   Gestion de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-rules.html">
+   Actions automatiques (règles)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-users-and-groups.html">
+   Utilisateurs et Groupes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-roles.html">
+   Permissions et Rôles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-types.html">
+   Nouveau types de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-workflows.html">
+   Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-products.html">
+   Extensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-restapi.html">
+   REST API
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/index.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/src/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   Références
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-du-cours-par-sujet">
+   Contenu du cours par sujet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#presentation-de-plone">
+     Présentation de Plone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-plone-a-l-aide-de-docker">
+     Installer Plone à l’aide de
+     <em>
+      Docker
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utiliser-les-contenus-de-base">
+     Utiliser les contenus de base
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liens-entre-contenus">
+     Liens entre contenus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#actions-automatiques-regles">
+     Actions automatiques (Règles)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilisateurs-roles">
+     Utilisateurs, Rôles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-type-de-contenu-et-sa-vue">
+     Créer un type de contenu et sa vue
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-une-vue-personnalisee-pour-un-type-de-contenu">
+     Créer une vue personnalisée pour un type de contenu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflows">
+     Workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plone-rest-api">
+     Plone REST API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-easyform">
+     Module complémentaire
+     <em>
+      collective.easyform
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-taxonomy">
+     Module complémentaire
+     <em>
+      collective.taxonomy
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-eea-facetednavigation">
+     Module complémentaire
+     <em>
+      eea.facetednavigation
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-contentsections">
+     Module complémentaire
+     <em>
+      collective.contentsections
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-plone-avec-buildout">
+     Installer Plone avec
+     <em>
+      buildout
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-produit-plone">
+     Créer un produit Plone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generic-setup">
+     Generic setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ajouter-une-vue-pour-un-type-de-contenu">
+     Ajouter une vue pour un type de contenu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concepts-non-abordes">
+     Concepts non abordés
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Structure du cours</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   Références
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenu-du-cours-par-sujet">
+   Contenu du cours par sujet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#presentation-de-plone">
+     Présentation de Plone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-plone-a-l-aide-de-docker">
+     Installer Plone à l’aide de
+     <em>
+      Docker
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utiliser-les-contenus-de-base">
+     Utiliser les contenus de base
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#liens-entre-contenus">
+     Liens entre contenus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#actions-automatiques-regles">
+     Actions automatiques (Règles)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilisateurs-roles">
+     Utilisateurs, Rôles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-type-de-contenu-et-sa-vue">
+     Créer un type de contenu et sa vue
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-une-vue-personnalisee-pour-un-type-de-contenu">
+     Créer une vue personnalisée pour un type de contenu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflows">
+     Workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plone-rest-api">
+     Plone REST API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-easyform">
+     Module complémentaire
+     <em>
+      collective.easyform
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-taxonomy">
+     Module complémentaire
+     <em>
+      collective.taxonomy
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-eea-facetednavigation">
+     Module complémentaire
+     <em>
+      eea.facetednavigation
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#module-complementaire-collective-contentsections">
+     Module complémentaire
+     <em>
+      collective.contentsections
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installer-plone-avec-buildout">
+     Installer Plone avec
+     <em>
+      buildout
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-produit-plone">
+     Créer un produit Plone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generic-setup">
+     Generic setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ajouter-une-vue-pour-un-type-de-contenu">
+     Ajouter une vue pour un type de contenu
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concepts-non-abordes">
+     Concepts non abordés
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="structure-du-cours">
+<h1>Structure du cours<a class="headerlink" href="#structure-du-cours" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p><strong>Objectif</strong> : être capable de créer et personnaliser un site web avec Plone 6 Classic UI</p></li>
+<li><p><strong>Prérequis</strong> : connaissance de base en HTML, CSS et Python</p></li>
+<li><p><strong>Orateur</strong> : Sébastien Verbois (<a class="reference external" href="mailto:sebastien&#46;verbois&#37;&#52;&#48;gmail&#46;com">sebastien<span>&#46;</span>verbois<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p></li>
+<li><p><strong>Support</strong> : fil conducteur des sujets avec références</p></li>
+</ul>
+<section id="references">
+<h2>Références<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Plone 6 documentation : <a class="reference external" href="https://6.docs.plone.org">https://6.docs.plone.org</a></p></li>
+<li><p>Plone 5 documentation :<a class="reference external" href="https://5.docs.plone.org">https://5.docs.plone.org</a></p></li>
+<li><p>Trainings : <a class="reference external" href="https://training.plone.org">https://training.plone.org</a></p></li>
+</ul>
+</section>
+<section id="contenu-du-cours-par-sujet">
+<h2>Contenu du cours par sujet<a class="headerlink" href="#contenu-du-cours-par-sujet" title="Permalink to this headline">#</a></h2>
+<section id="presentation-de-plone">
+<h3>Présentation de Plone<a class="headerlink" href="#presentation-de-plone" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Qu’est ce qu’un CMS ?</p></li>
+<li><p>Où Plone est-il utilisé ?</p></li>
+<li><p>Pourquoi Plone plutôt que Wordpress ou Drupal ?</p></li>
+<li><p>Plone 6 Classic UI versus Plone 6 (Volto)</p></li>
+</ul>
+</section>
+<section id="installer-plone-a-l-aide-de-docker">
+<h3>Installer Plone à l’aide de <em>Docker</em><a class="headerlink" href="#installer-plone-a-l-aide-de-docker" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Docker image : <a class="reference external" href="https://hub.docker.com/r/plone/plone-backend">https://hub.docker.com/r/plone/plone-backend</a></p></li>
+</ul>
+<p><strong>Devoir</strong> : Terminer l’installation de Plone sur son ordinateur personnel</p>
+</section>
+<section id="utiliser-les-contenus-de-base">
+<h3>Utiliser les contenus de base<a class="headerlink" href="#utiliser-les-contenus-de-base" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Utiliser et configurer les types de contenu</p></li>
+<li><p>Utiliser et configurer les commentaires</p></li>
+<li><p>Utiliser et configurer la gestion de versions</p></li>
+</ul>
+<p><strong>Devoir</strong> : Créer quelques pages avec les types par défaut de Plone</p>
+</section>
+<section id="liens-entre-contenus">
+<h3>Liens entre contenus<a class="headerlink" href="#liens-entre-contenus" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Organiser son contenu à l’aide de dossiers</p></li>
+<li><p>Configurer la navigation</p></li>
+<li><p>Contenus correlés et mots clés</p></li>
+<li><p>Listings personnalisés à l’aide de <em>Collections</em></p></li>
+</ul>
+</section>
+<section id="actions-automatiques-regles">
+<h3>Actions automatiques (Règles)<a class="headerlink" href="#actions-automatiques-regles" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="utilisateurs-roles">
+<h3>Utilisateurs, Rôles<a class="headerlink" href="#utilisateurs-roles" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Utilisateurs/Groupes</p></li>
+<li><p>Permissions/Rôles</p></li>
+<li><p>Rôles locaux et Rôles globaux</p></li>
+</ul>
+</section>
+<section id="creer-un-type-de-contenu-et-sa-vue">
+<h3>Créer un type de contenu et sa vue<a class="headerlink" href="#creer-un-type-de-contenu-et-sa-vue" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Créer un nouveau type de contenu TTW</p></li>
+<li><p>Personnaliser le site à l’aide d’une feuille de style CSS</p></li>
+</ul>
+</section>
+<section id="creer-une-vue-personnalisee-pour-un-type-de-contenu">
+<h3>Créer une vue personnalisée pour un type de contenu<a class="headerlink" href="#creer-une-vue-personnalisee-pour-un-type-de-contenu" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Introduire les languages TAL/TALES/METAL</p></li>
+<li><p>Créer une vue personnalisée pour un type de contenu</p></li>
+</ul>
+</section>
+<section id="workflows">
+<h3>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Etudier les wokflows par défaut de Plone</p></li>
+<li><p>Créer un workflow personnalisé</p></li>
+<li><p>Workflows local (CMFPlacefulWorkflow)</p></li>
+</ul>
+</section>
+<section id="plone-rest-api">
+<h3>Plone REST API<a class="headerlink" href="#plone-rest-api" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Interroger l’API REST de Plone à l’aide du logiciel ARC (Advanced REST Client) ou Postman</p></li>
+<li><p>Présenter Volto, le futur frontend Plone réaliser en ReactJS</p></li>
+</ul>
+</section>
+<section id="module-complementaire-collective-easyform">
+<h3>Module complémentaire <em>collective.easyform</em><a class="headerlink" href="#module-complementaire-collective-easyform" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/collective.easyform">https://pypi.org/project/collective.easyform</a></p></li>
+</ul>
+</section>
+<section id="module-complementaire-collective-taxonomy">
+<h3>Module complémentaire <em>collective.taxonomy</em><a class="headerlink" href="#module-complementaire-collective-taxonomy" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/collective.taxonomy">https://pypi.org/project/collective.taxonomy</a></p></li>
+</ul>
+</section>
+<section id="module-complementaire-eea-facetednavigation">
+<h3>Module complémentaire <em>eea.facetednavigation</em><a class="headerlink" href="#module-complementaire-eea-facetednavigation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/eea.facetednavigation">https://pypi.org/project/eea.facetednavigation</a></p></li>
+</ul>
+</section>
+<section id="module-complementaire-collective-contentsections">
+<h3>Module complémentaire <em>collective.contentsections</em><a class="headerlink" href="#module-complementaire-collective-contentsections" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/collective.contentsections">https://pypi.org/project/collective.contentsections</a></p></li>
+</ul>
+</section>
+<section id="installer-plone-avec-buildout">
+<h3>Installer Plone avec <em>buildout</em><a class="headerlink" href="#installer-plone-avec-buildout" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="creer-un-produit-plone">
+<h3>Créer un produit Plone<a class="headerlink" href="#creer-un-produit-plone" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="generic-setup">
+<h3>Generic setup<a class="headerlink" href="#generic-setup" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Generic setup : ajouter un rôle</p></li>
+<li><p>Generic setup : ajouter un type de contenu</p></li>
+<li><p>Generic setup : ajouter un workflow</p></li>
+</ul>
+</section>
+<section id="ajouter-une-vue-pour-un-type-de-contenu">
+<h3>Ajouter une vue pour un type de contenu<a class="headerlink" href="#ajouter-une-vue-pour-un-type-de-contenu" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="concepts-non-abordes">
+<h3>Concepts non abordés<a class="headerlink" href="#concepts-non-abordes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>portlet</p></li>
+</ul>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="plone6-presentation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Présentation de Plone</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sébastien Verbois<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

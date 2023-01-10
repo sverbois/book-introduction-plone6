@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Nouveau types de contenu &#8212; Introduction à Plone 6 Classic UI</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Workflows" href="plone6-workflows.html" />
+    <link rel="prev" title="Permissions et Rôles" href="plone6-roles.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/plone6-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction à Plone 6 Classic UI</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Structure du cours
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-presentation.html">
+   Présentation de Plone
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-docker.html">
+   Installation avec Docker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-management.html">
+   Gestion de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-content-rules.html">
+   Actions automatiques (règles)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-users-and-groups.html">
+   Utilisateurs et Groupes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-roles.html">
+   Permissions et Rôles
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Nouveau types de contenu
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-workflows.html">
+   Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-products.html">
+   Extensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-restapi.html">
+   REST API
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-content-types.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/src/plone6-content-types.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-un-nouveau-type-de-contenu">
+   Créer un nouveau type de contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-type-nouveau-type-de-contenu-ttw-through-the-web">
+     Créer un type nouveau type de contenu TTW (Through The Web)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xml-dexterity-schema-reference">
+     XML Dexterity Schema référence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-author">
+     Exemple : Author
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-book">
+     Exemple : Book
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limiter-l-edition-d-un-champ-de-votre-contenu-aux-administrateurs-du-site">
+   Limiter l’édition d’un champ de votre contenu aux administrateurs du site
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexer-un-champ-pour-le-moteur-de-recherche">
+   Indexer un champ pour le moteur de recherche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-creer-une-vue-personnalisee-de-notre-type-de-contenu">
+   Comment créer une vue personnalisée de notre type de contenu ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-template-system">
+     Web template system
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zope-page-template-zpt">
+       Zope Page Template (ZPT)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creer-une-zope-page-template-dans-votre-site-plone">
+       Créer une
+       <em>
+        zope page template
+       </em>
+       dans votre site Plone
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activer-votre-nouvelle-vue-sur-votre-type-de-contenu">
+       Activer votre nouvelle vue sur votre type de contenu
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utiliser-les-slots-de-la-main-template-de-plone">
+       Utiliser les
+       <em>
+        slots
+       </em>
+       de la
+       <em>
+        main_template
+       </em>
+       de Plone
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-book-view">
+       Exemple : Book view
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Nouveau types de contenu</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creer-un-nouveau-type-de-contenu">
+   Créer un nouveau type de contenu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-type-nouveau-type-de-contenu-ttw-through-the-web">
+     Créer un type nouveau type de contenu TTW (Through The Web)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#xml-dexterity-schema-reference">
+     XML Dexterity Schema référence
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-author">
+     Exemple : Author
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-book">
+     Exemple : Book
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limiter-l-edition-d-un-champ-de-votre-contenu-aux-administrateurs-du-site">
+   Limiter l’édition d’un champ de votre contenu aux administrateurs du site
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexer-un-champ-pour-le-moteur-de-recherche">
+   Indexer un champ pour le moteur de recherche
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comment-creer-une-vue-personnalisee-de-notre-type-de-contenu">
+   Comment créer une vue personnalisée de notre type de contenu ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-template-system">
+     Web template system
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zope-page-template-zpt">
+       Zope Page Template (ZPT)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creer-une-zope-page-template-dans-votre-site-plone">
+       Créer une
+       <em>
+        zope page template
+       </em>
+       dans votre site Plone
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activer-votre-nouvelle-vue-sur-votre-type-de-contenu">
+       Activer votre nouvelle vue sur votre type de contenu
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utiliser-les-slots-de-la-main-template-de-plone">
+       Utiliser les
+       <em>
+        slots
+       </em>
+       de la
+       <em>
+        main_template
+       </em>
+       de Plone
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-book-view">
+       Exemple : Book view
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="nouveau-types-de-contenu">
+<h1>Nouveau types de contenu<a class="headerlink" href="#nouveau-types-de-contenu" title="Permalink to this headline">#</a></h1>
+<p>Dans <em>Plone 6</em> le framework qui permet de créer des nouveaux types de contenus s’appelle <em>Dexterity</em></p>
+<section id="creer-un-nouveau-type-de-contenu">
+<h2>Créer un nouveau type de contenu<a class="headerlink" href="#creer-un-nouveau-type-de-contenu" title="Permalink to this headline">#</a></h2>
+<section id="creer-un-type-nouveau-type-de-contenu-ttw-through-the-web">
+<h3>Créer un type nouveau type de contenu TTW (Through The Web)<a class="headerlink" href="#creer-un-type-nouveau-type-de-contenu-ttw-through-the-web" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://training.plone.org/5/ttw/dexterity.html">https://training.plone.org/5/ttw/dexterity.html</a></p></li>
+</ul>
+</section>
+<section id="xml-dexterity-schema-reference">
+<h3>XML Dexterity Schema référence<a class="headerlink" href="#xml-dexterity-schema-reference" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.plone.org/external/plone.app.dexterity/docs/reference/dexterity-xml.html">https://docs.plone.org/external/plone.app.dexterity/docs/reference/dexterity-xml.html</a></p></li>
+</ul>
+</section>
+<section id="exemple-author">
+<h3>Exemple : Author<a class="headerlink" href="#exemple-author" title="Permalink to this headline">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;model xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns:lingua=&quot;http://namespaces.plone.org/supermodel/lingua&quot; xmlns:indexer=&quot;http://namespaces.plone.org/supermodel/indexer&quot; xmlns:easyform=&quot;http://namespaces.plone.org/supermodel/easyform&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot;&gt;
+  &lt;schema&gt;
+    &lt;field name=&quot;title&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+      &lt;description/&gt;
+      &lt;title&gt;Nom complet&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;birthday&quot; type=&quot;zope.schema.Date&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Date de naissance&lt;/title&gt;
+    &lt;/field&gt;
+  &lt;/schema&gt;
+&lt;/model&gt;
+</pre></div>
+</div>
+</section>
+<section id="exemple-book">
+<h3>Exemple : Book<a class="headerlink" href="#exemple-book" title="Permalink to this headline">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;model xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot; xmlns:marshal=&quot;http://namespaces.plone.org/supermodel/marshal&quot; xmlns:form=&quot;http://namespaces.plone.org/supermodel/form&quot; xmlns:security=&quot;http://namespaces.plone.org/supermodel/security&quot; xmlns:users=&quot;http://namespaces.plone.org/supermodel/users&quot; xmlns:lingua=&quot;http://namespaces.plone.org/supermodel/lingua&quot; xmlns:indexer=&quot;http://namespaces.plone.org/supermodel/indexer&quot; xmlns:easyform=&quot;http://namespaces.plone.org/supermodel/easyform&quot; xmlns=&quot;http://namespaces.plone.org/supermodel/schema&quot; i18n:domain=&quot;plone&quot;&gt;
+  &lt;schema&gt;
+    &lt;field name=&quot;title&quot; type=&quot;zope.schema.TextLine&quot;&gt;
+      &lt;description/&gt;
+      &lt;title&gt;Titre du livre&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;isbn&quot; type=&quot;zope.schema.TextLine&quot; indexer:searchable=&quot;true&quot;&gt;
+      &lt;description/&gt;
+      &lt;max_length&gt;13&lt;/max_length&gt;
+      &lt;min_length&gt;13&lt;/min_length&gt;
+      &lt;title&gt;ISBN&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;category&quot; type=&quot;zope.schema.Choice&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Cat&amp;#233;gorie&lt;/title&gt;
+      &lt;values&gt;
+        &lt;element&gt;Bande dessin&amp;#233;e&lt;/element&gt;
+        &lt;element&gt;Livre de poche&lt;/element&gt;
+        &lt;element&gt;Manga&lt;/element&gt;
+        &lt;element&gt;&lt;/element&gt;
+      &lt;/values&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;topics&quot; type=&quot;zope.schema.Set&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Th&amp;#232;mes&lt;/title&gt;
+      &lt;value_type type=&quot;zope.schema.Choice&quot;&gt;
+        &lt;values&gt;
+          &lt;element&gt;Cuisine&lt;/element&gt;
+          &lt;element&gt;Informatique&lt;/element&gt;
+          &lt;element&gt;Jardin&lt;/element&gt;
+          &lt;element&gt;Sport&lt;/element&gt;
+        &lt;/values&gt;
+      &lt;/value_type&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;pages&quot; type=&quot;zope.schema.Int&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Nombre de pages&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;publication_date&quot; type=&quot;zope.schema.Date&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Jour de publication&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;price&quot; type=&quot;zope.schema.Float&quot; security:write-permission=&quot;cmf.ManagePortal&quot;&gt;
+      &lt;description/&gt;
+      &lt;min&gt;0.0&lt;/min&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Prix&lt;/title&gt;
+    &lt;/field&gt;
+    &lt;field name=&quot;authors&quot; type=&quot;z3c.relationfield.schema.RelationList&quot;&gt;
+      &lt;description/&gt;
+      &lt;required&gt;False&lt;/required&gt;
+      &lt;title&gt;Auteurs&lt;/title&gt;
+      &lt;value_type type=&quot;z3c.relationfield.schema.RelationChoice&quot;&gt;
+        &lt;title i18n:translate=&quot;&quot;&gt;Relation Choice&lt;/title&gt;
+        &lt;portal_type&gt;
+          &lt;element&gt;author&lt;/element&gt;
+        &lt;/portal_type&gt;
+      &lt;/value_type&gt;
+    &lt;/field&gt;
+    &lt;fieldset name=&quot;covers&quot; label=&quot;Couvertures&quot;&gt;
+      &lt;field name=&quot;image&quot; type=&quot;plone.namedfile.field.NamedBlobImage&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Couverture&lt;/title&gt;
+      &lt;/field&gt;
+      &lt;field name=&quot;back&quot; type=&quot;plone.app.textfield.RichText&quot;&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;4&amp;#232;me de couverture&lt;/title&gt;
+      &lt;/field&gt;
+    &lt;/fieldset&gt;
+  &lt;/schema&gt;
+&lt;/model&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="limiter-l-edition-d-un-champ-de-votre-contenu-aux-administrateurs-du-site">
+<h2>Limiter l’édition d’un champ de votre contenu aux administrateurs du site<a class="headerlink" href="#limiter-l-edition-d-un-champ-de-votre-contenu-aux-administrateurs-du-site" title="Permalink to this headline">#</a></h2>
+<p>Il n’existe pas encore d’interface graphique pour effectuer cette action. Il faut éditer directement la représentation xml du champ.</p>
+<p><strong>Exemple de modification XML :</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;field type=&quot;zope.schema.TextLine&quot;
+    name=&quot;my_admin_field&quot;
+    security:write-permission=&quot;cmf.ManagePortal&quot;&gt;
+        &lt;title&gt;My admin field&lt;/title&gt;
+&lt;/field&gt;
+</pre></div>
+</div>
+</section>
+<section id="indexer-un-champ-pour-le-moteur-de-recherche">
+<h2>Indexer un champ pour le moteur de recherche<a class="headerlink" href="#indexer-un-champ-pour-le-moteur-de-recherche" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Installer le produit <em>collective.dexteritytextindexer</em> : <a class="reference external" href="https://pypi.org/project/collective.dexteritytextindexer/">https://pypi.org/project/collective.dexteritytextindexer/</a></p></li>
+<li><p>Activer la behavior <em>Dynamic SearchableText indexer behavior</em> : <a class="reference external" href="http://localhost:8080/Plone/dexterity-types/">http://localhost:8080/Plone/dexterity-types/</a><em>MycontentType</em>/&#64;&#64;behaviors</p></li>
+<li><p>Activer la proprité <em>Searchable</em> sur le champ : <a class="reference external" href="http://localhost:8080/Plone/dexterity-types/">http://localhost:8080/Plone/dexterity-types/</a><em>MycontentType</em>/<em>MysearchableField</em></p></li>
+</ul>
+<p><strong>Résultat dans la représentation XML du champ :</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;field type=&quot;zope.schema.TextLine&quot;
+    name=&quot;my_searchable_field&quot;
+    indexer:searchable=&quot;true&quot;&gt;
+        &lt;title&gt;My searchable field&lt;/title&gt;
+&lt;/field&gt;
+</pre></div>
+</div>
+</section>
+<section id="comment-creer-une-vue-personnalisee-de-notre-type-de-contenu">
+<h2>Comment créer une vue personnalisée de notre type de contenu ?<a class="headerlink" href="#comment-creer-une-vue-personnalisee-de-notre-type-de-contenu" title="Permalink to this headline">#</a></h2>
+<section id="web-template-system">
+<h3>Web template system<a class="headerlink" href="#web-template-system" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Web_template_system">https://en.wikipedia.org/wiki/Web_template_system</a></p></li>
+</ul>
+<section id="zope-page-template-zpt">
+<h4>Zope Page Template (ZPT)<a class="headerlink" href="#zope-page-template-zpt" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Introduction : <a class="reference external" href="https://training.plone.org/5/mastering-plone/zpt.html">https://training.plone.org/5/mastering-plone/zpt.html</a></p></li>
+<li><p>Référence complète : <a class="reference external" href="https://zope.readthedocs.io/en/latest/zopebook/AppendixC.html">https://zope.readthedocs.io/en/latest/zopebook/AppendixC.html</a></p></li>
+<li><p>Utilisations de base : <a class="reference external" href="https://zope.readthedocs.io/en/latest/zopebook/ZPT.html">https://zope.readthedocs.io/en/latest/zopebook/ZPT.html</a></p></li>
+<li><p>Utilisations avancées : <a class="reference external" href="https://zope.readthedocs.io/en/latest/zopebook/AdvZPT.html">https://zope.readthedocs.io/en/latest/zopebook/AdvZPT.html</a></p></li>
+</ul>
+</section>
+<section id="creer-une-zope-page-template-dans-votre-site-plone">
+<h4>Créer une <em>zope page template</em> dans votre site Plone<a class="headerlink" href="#creer-une-zope-page-template-dans-votre-site-plone" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Plone -&gt; Configuration du site -&gt; Interface de maintenance -&gt; portal_skins -&gt; custom -&gt; Select type to add -&gt; Page template</p></li>
+</ul>
+</section>
+<section id="activer-votre-nouvelle-vue-sur-votre-type-de-contenu">
+<h4>Activer votre nouvelle vue sur votre type de contenu<a class="headerlink" href="#activer-votre-nouvelle-vue-sur-votre-type-de-contenu" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>ZMI -&gt; portal_types -&gt; <em>MycontentType</em> -&gt; Default view method -&gt; <em>NameOfMyTemplate</em></p></li>
+<li><p>ZMI -&gt; portal_types -&gt; <em>MycontentType</em> -&gt; Available view methods -&gt; <em>NameOfMyTemplate</em></p></li>
+</ul>
+</section>
+<section id="utiliser-les-slots-de-la-main-template-de-plone">
+<h4>Utiliser les <em>slots</em> de la <em>main_template</em> de Plone<a class="headerlink" href="#utiliser-les-slots-de-la-main-template-de-plone" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/plone/Products.CMFPlone/blob/5.2.x/Products/CMFPlone/browser/templates/main_template.pt">https://github.com/plone/Products.CMFPlone/blob/5.2.x/Products/CMFPlone/browser/templates/main_template.pt</a></p></li>
+</ul>
+</section>
+<section id="exemple-book-view">
+<h4>Exemple : Book view<a class="headerlink" href="#exemple-book-view" title="Permalink to this headline">#</a></h4>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;metal:macro use-macro=&quot;context/main_template/macros/master&quot;&gt;
+
+    &lt;metal:css fill-slot=&quot;style_slot&quot;&gt;
+        &lt;style&gt;
+            .bookBuy {
+               float: right;
+               text-transform: uppercase;
+               background-color: orange;
+
+            }
+            .bookBuy a {
+               color: #FFF !important;
+            }
+            .bookCover {
+               float: right;
+            }
+            .bookDescription {
+               display: inline-block;
+               border: 1px solid #666;
+               padding: 10px;
+            }
+        &lt;/style&gt;
+    &lt;/metal:css&gt;
+
+    &lt;metal:main metal:fill-slot=&quot;main&quot;&gt;
+      &lt;button class=&quot;bookBuy&quot;&gt;&lt;a tal:define=&quot;amazon_url python:&#39;https://www.amazon.fr/dp/&#39; + context.isbn&quot; tal:attributes=&quot;href amazon_url&quot; target=&quot;_blank&quot;&gt;Acheter&lt;/a&gt;&lt;/button&gt;
+      &lt;h1 tal:content=&quot;context/title&quot;&gt;Titre du livre&lt;/h1&gt;
+      &lt;img class=&quot;bookCover&quot; tal:attributes=&quot;src python:context.absolute_url() + &#39;/@@images/image/preview&#39;&quot;/&gt;
+      &lt;div class=&quot;bookAuthors&quot;&gt;
+          par
+        &lt;span tal:repeat=&quot;relation context/authors&quot;&gt;
+            &lt;a tal:condition=&quot;not:relation/isBroken&quot;
+                tal:attributes=&quot;href relation/to_object/absolute_url&quot;
+                tal:content=&quot;relation/to_object/title&quot;&gt;
+                Prénom Nom
+            &lt;/a&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;bookDescription&quot;&gt;
+          &lt;strong&gt;ISBN&lt;/strong&gt; : &lt;span tal:replace=&quot;context/isbn&quot;&gt;1234567890123&lt;/span&gt;
+          &lt;div tal:condition=&quot;context/category&quot;&gt;
+              &lt;strong&gt;Catégorie&lt;/strong&gt; : &lt;span tal:replace=&quot;context/category&quot;&gt;category&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div tal:condition=&quot;context/topics&quot;&gt;
+              &lt;strong&gt;Thèmes&lt;/strong&gt; : &lt;span tal:define=&quot;topics python:&#39;, &#39;.join(context.topics)&quot; tal:replace=&quot;topics&quot;&gt;un, deux, trois&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div tal:condition=&quot;context/pages&quot;&gt;
+              &lt;strong&gt;Pages&lt;/strong&gt; : &lt;span tal:content=&quot;context/pages&quot;&gt;42&lt;/span&gt;p
+          &lt;/div&gt;
+          &lt;div tal:condition=&quot;context/publication_date&quot;&gt;
+              &lt;strong&gt;Date de publication&lt;/strong&gt; : &lt;span tal:replace=&quot;path:context/publication_date&quot;&gt;1971/06/27&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div tal:condition=&quot;context/price&quot;&gt;
+              &lt;strong&gt;Prix&lt;/strong&gt; : &lt;span tal:replace=&quot;path:context/price&quot;&gt;0.0&lt;/span&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;h2&gt;Quatrième de couverture&lt;/h2&gt;
+      &lt;div tal:condition=&quot;context/back&quot; tal:content=&quot;structure context/back/output&quot;&gt;Texte du quatrième de couverture&lt;/div&gt;
+    &lt;/metal:main&gt;
+
+&lt;/metal:macro&gt;
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./src"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="plone6-roles.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Permissions et Rôles</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="plone6-workflows.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workflows</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Sébastien Verbois<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

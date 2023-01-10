@@ -1,0 +1,28 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Introduction à Plone 6 Classic UI
+author: Sébastien Verbois
+logo: src/images/plone6-logo.png
+
+exclude_patterns: [_build, venv]
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+#execute:
+#  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+#latex:
+#  latex_documents:
+#    targetname: book-plone6.tex
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/sverbois/book-introduction-plone6 # Online location of your book
+  path_to_book: _build/html # Optional path to your book, relative to the repository root
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
