@@ -14,6 +14,10 @@ build: venv/bin/jupyter-book
 html: _build/html/index.html
 	open _build/html/index.html
 
+.PHONY: docs  # Copy HTML version to docs folder
+docs: _build/html
+	cp -rlf _build/html docs
+
 .PHONY: clean  # Clean developement environment
 clean:
 	rm -rf venv
