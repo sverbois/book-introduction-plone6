@@ -71,7 +71,7 @@ Contenu du cours par sujet
 ### Plone REST API
 
 - Interroger l'API REST de Plone à l'aide du logiciel ARC (Advanced REST Client) ou Postman
-- Présenter Volto, le futur frontend Plone réaliser en ReactJS
+- Présenter Volto, le frontend Plone réaliser en ReactJS
 
 ### Module complémentaire *collective.easyform*
 
@@ -88,8 +88,6 @@ Contenu du cours par sujet
 ### Module complémentaire *collective.contentsections*
 
 - https://pypi.org/project/collective.contentsections
-
-### Installer Plone avec *buildout*
 
 ### Créer un produit Plone
 
