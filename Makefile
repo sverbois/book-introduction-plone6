@@ -18,7 +18,6 @@ html: _build/html/index.html
 docs: _build/html
 	rm -rf docs
 	mv _build/html docs
-	touch docs/.nojekyll
 
 .PHONY: clean  # Clean developement environment
 clean:
