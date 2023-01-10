@@ -16,7 +16,8 @@ html: _build/html/index.html
 
 .PHONY: docs  # Copy HTML version to docs folder
 docs: _build/html
-	cp -rlf _build/html docs
+	rm -rf docs
+	mv _build/html docs
 
 .PHONY: clean  # Clean developement environment
 clean:
