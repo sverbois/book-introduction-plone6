@@ -101,7 +101,7 @@ Comment structurer le contenu du site à l'aide de dossiers ?
 Comment personnaliser la navigation ?
 -------------------------------------
 
-### Navigation automatiques
+### Navigation automatique
 
 Une navigation automatique est créée à 3 endroits : onglets, portlet de navigation, plan du site
 
