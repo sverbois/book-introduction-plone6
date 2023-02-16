@@ -5,7 +5,7 @@ Installation avec Docker
 
 ### Créer et démarrer un container Plone 6
 
-Créer une structure
+Créer la structure
 
     plone6intro
     └── docker-compose.yml
@@ -22,11 +22,11 @@ Créer et démarrer le container
 
     docker compose up
 
-Attention : Les données stockées dans le site Plone sont à l’intérieur du conteneur docker. Si vous supprimer le conteneur, les données seront perdues.
+**Attention** : Les données stockées dans le site Plone sont à l’intérieur du conteneur docker. Si vous supprimer le conteneur, les données seront perdues.
 
 ### Créer un container Plone 6 avec stockage des données en dehors du container
 
-Créer une structure
+Créer la structure
 
     plone6intro
     ├── data
@@ -59,8 +59,8 @@ Créer et démarrer le container
         - ADDONS=collective.easyform==4.1.2 collective.taxonomy==3.0.0
         volumes:
         - type: bind
-            source: ./data
-            target: /data
+          source: ./data
+          target: /data
 
 ### Créer un container Plone 6 avec un thème dans le système de fichier
 
@@ -76,8 +76,11 @@ Créer et démarrer le container
         ports:
         - "8080:8080"
         environment:
-        - DEVELOP=src/seba
+        - DEVELOP=/app/src/seba
         volumes:
         - type: bind
-            source: ./data
-            target: /data
+          source: ./data
+          target: /data
+        - type: bind
+          source: ./seba
+          target: /app/src/seba

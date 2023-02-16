@@ -19,8 +19,8 @@ Plone est un *Système de gestion de contenu* - *Content Management System (CMS)
 **Technologies**
 
 - écrit en *Python* : <https://www.python.org>
-- construit à l'aide du serveur d'application *Zope* : <https://www.zope.org>
-- utilise la base de donnée objet *ZODB* : <https://www.zodb.org>
+- construit à l'aide du serveur d'application *Zope* : <https://www.zope.org>, <https://zope.readthedocs.io>
+- utilise la base de donnée objet *ZODB* : <https://www.zope.dev>
 
 **Plone est un framework spécialisé**
 

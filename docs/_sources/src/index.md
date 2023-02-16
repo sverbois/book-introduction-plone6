@@ -89,13 +89,15 @@ Contenu du cours par sujet
 
 - https://pypi.org/project/collective.contentsections
 
-### Créer un produit Plone
+### Créer un add-on Plone
 
 ### Generic setup
 
 - Generic setup : ajouter un rôle
 - Generic setup : ajouter un type de contenu
 - Generic setup : ajouter un workflow
+
+### Jbot
 
 ### Ajouter une vue pour un type de contenu
 

@@ -12,5 +12,6 @@ chapters:
   - file: src/plone6-roles
   - file: src/plone6-content-types
   - file: src/plone6-workflows
-  - file: src/plone6-products
   - file: src/plone6-restapi
+  - file: src/plone6-products
+  - file: src/plone6-theming

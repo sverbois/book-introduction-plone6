@@ -101,6 +101,8 @@ Comment structurer le contenu du site à l'aide de dossiers ?
 Comment personnaliser la navigation ?
 -------------------------------------
 
+### Navigation automatiques
+
 Une navigation automatique est créée à 3 endroits : onglets, portlet de navigation, plan du site
 
 - Plone -> Configuration du site -> Navigation
@@ -109,6 +111,10 @@ Une navigation automatique est créée à 3 endroits : onglets, portlet de navig
 - désactiver l'onglet "Accueil" : Plone -> Configuration du site -> Actions -> Portal tabs -> Accueil -> Cacher
 - exclure un contenu du menu de navigation : Contenu -> Modifier -> Paramètres -> Exclure de la navigation
 - configurer la portlet de navigation pour afficher le contenu d'un sous-dossier
+
+### Actions
+
+- Plone -> Configuration du site -> Actions
 
 Comment lier des contenus entre eux ?
 -------------------------------------

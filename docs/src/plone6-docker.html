@@ -155,13 +155,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plone6-products.html">
-   Extensions
+  <a class="reference internal" href="plone6-restapi.html">
+   REST API
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plone6-restapi.html">
-   REST API
+  <a class="reference internal" href="plone6-products.html">
+   Extensions
   </a>
  </li>
 </ul>
@@ -425,7 +425,7 @@ title="Print to PDF"
 <p><strong>Référence</strong> : <a class="reference external" href="https://6.docs.plone.org/install/containers/images/backend.html">https://6.docs.plone.org/install/containers/images/backend.html</a></p>
 <section id="creer-et-demarrer-un-container-plone-6">
 <h2>Créer et démarrer un container Plone 6<a class="headerlink" href="#creer-et-demarrer-un-container-plone-6" title="Permalink to this headline">#</a></h2>
-<p>Créer une structure</p>
+<p>Créer la structure</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
 └── docker-compose.yml
 </pre></div>
@@ -442,11 +442,11 @@ title="Print to PDF"
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker compose up
 </pre></div>
 </div>
-<p>Attention : Les données stockées dans le site Plone sont à l’intérieur du conteneur docker. Si vous supprimer le conteneur, les données seront perdues.</p>
+<p><strong>Attention</strong> : Les données stockées dans le site Plone sont à l’intérieur du conteneur docker. Si vous supprimer le conteneur, les données seront perdues.</p>
 </section>
 <section id="creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
 <h2>Créer un container Plone 6 avec stockage des données en dehors du container<a class="headerlink" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container" title="Permalink to this headline">#</a></h2>
-<p>Créer une structure</p>
+<p>Créer la structure</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
 ├── data
 └── docker-compose.yml
@@ -480,8 +480,8 @@ title="Print to PDF"
     - ADDONS=collective.easyform==4.1.2 collective.taxonomy==3.0.0
     volumes:
     - type: bind
-        source: ./data
-        target: /data
+      source: ./data
+      target: /data
 </pre></div>
 </div>
 </section>
@@ -500,11 +500,14 @@ title="Print to PDF"
     ports:
     - &quot;8080:8080&quot;
     environment:
-    - DEVELOP=src/seba
+    - DEVELOP=/app/src/seba
     volumes:
     - type: bind
-        source: ./data
-        target: /data
+      source: ./data
+      target: /data
+    - type: bind
+      source: ./seba
+      target: /app/src/seba
 </pre></div>
 </div>
 </section>

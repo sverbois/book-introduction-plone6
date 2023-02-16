@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Présentation de Plone &#8212; Introduction à Plone 6 Classic UI</title>
+    <title>Créer un add-on Plone &#8212; Introduction à Plone 6 Classic UI</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation avec Docker" href="plone6-docker.html" />
-    <link rel="prev" title="Structure du cours" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,9 +111,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-presentation.html">
    Présentation de Plone
   </a>
  </li>
@@ -254,7 +252,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-presentation.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-addon.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -282,7 +280,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/src/plone6-presentation.md"
+        <a href="../_sources/src/plone6-addon.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -342,36 +340,14 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qu-est-ce-que-plone">
-   Qu’est-ce que Plone ?
+  <a class="reference internal nav-link" href="#creer-un-add-on-plone-minimal">
+   Créer un add-on Plone minimal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ou-puis-tester-plone">
-   Où puis-tester Plone ?
+  <a class="reference internal nav-link" href="#javascript-patterns">
+   Javascript Patterns
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qui-utilise-plone">
-   Qui utilise Plone ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comment-apprendre-plone">
-   Comment apprendre Plone ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pourquoi-plone">
-   Pourquoi Plone ?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plone-vs-drupal-vs-wordpress">
-     Plone vs Drupal vs Wordpress
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -382,7 +358,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Présentation de Plone</h1>
+                <h1>Créer un add-on Plone</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -393,36 +369,14 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qu-est-ce-que-plone">
-   Qu’est-ce que Plone ?
+  <a class="reference internal nav-link" href="#creer-un-add-on-plone-minimal">
+   Créer un add-on Plone minimal
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ou-puis-tester-plone">
-   Où puis-tester Plone ?
+  <a class="reference internal nav-link" href="#javascript-patterns">
+   Javascript Patterns
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qui-utilise-plone">
-   Qui utilise Plone ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#comment-apprendre-plone">
-   Comment apprendre Plone ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pourquoi-plone">
-   Pourquoi Plone ?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plone-vs-drupal-vs-wordpress">
-     Plone vs Drupal vs Wordpress
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -434,90 +388,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="presentation-de-plone">
-<h1>Présentation de Plone<a class="headerlink" href="#presentation-de-plone" title="Permalink to this headline">#</a></h1>
-<section id="qu-est-ce-que-plone">
-<h2>Qu’est-ce que Plone ?<a class="headerlink" href="#qu-est-ce-que-plone" title="Permalink to this headline">#</a></h2>
-<p>Plone est un <em>Système de gestion de contenu</em> - <em>Content Management System (CMS)</em>.</p>
-<p><strong>Définition CMS</strong></p>
-<p><a class="reference external" href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_contenu">https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_gestion_de_contenu</a></p>
-<ul class="simple">
-<li><p>séparer les opérations de gestion de la forme et du contenu</p></li>
-<li><p>fournir une chaîne de publication (workflow)</p></li>
-<li><p>permettre de structurer le contenu</p></li>
-<li><p>permettre de hiérarchiser les utilisateurs et de leur attribuer des rôles et des permissions</p></li>
-<li><p>permettre la gestion de versions des contenus</p></li>
-</ul>
-<p><strong>Technologies</strong></p>
-<ul class="simple">
-<li><p>écrit en <em>Python</em> : <a class="reference external" href="https://www.python.org">https://www.python.org</a></p></li>
-<li><p>construit à l’aide du serveur d’application <em>Zope</em> : <a class="reference external" href="https://www.zope.org">https://www.zope.org</a>, <a class="reference external" href="https://zope.readthedocs.io">https://zope.readthedocs.io</a></p></li>
-<li><p>utilise la base de donnée objet <em>ZODB</em> : <a class="reference external" href="https://www.zope.dev">https://www.zope.dev</a></p></li>
-</ul>
-<p><strong>Plone est un framework spécialisé</strong></p>
-<ul class="simple">
-<li><p>Voir le document <a class="reference download internal" download="" href="../_downloads/a3c93dd1e8628843c7110449bedfe689/framework-categories.pdf"><code class="xref download docutils literal notranslate"><span class="pre">catégorisation</span> <span class="pre">des</span> <span class="pre">frameworks</span></code></a></p></li>
-</ul>
-<p><strong>Origine du nom Plone</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.plone.org/intro/index.html#what-does-plone-mean-how-is-it-pronounced">https://docs.plone.org/intro/index.html#what-does-plone-mean-how-is-it-pronounced</a></p></li>
-<li><p><a class="reference external" href="https://open.spotify.com/album/5mrsUOyC7ltAy6V20oBov5?si=TN0Ns7iuQfWeVcR-GlU8xA">https://open.spotify.com/album/5mrsUOyC7ltAy6V20oBov5?si=TN0Ns7iuQfWeVcR-GlU8xA</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plone_%28band%29">https://en.wikipedia.org/wiki/Plone_%28band%29</a></p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="creer-un-add-on-plone">
+<h1>Créer un add-on Plone<a class="headerlink" href="#creer-un-add-on-plone" title="Permalink to this headline">#</a></h1>
+<section id="creer-un-add-on-plone-minimal">
+<h2>Créer un add-on Plone minimal<a class="headerlink" href="#creer-un-add-on-plone-minimal" title="Permalink to this headline">#</a></h2>
 </section>
-<section id="ou-puis-tester-plone">
-<h2>Où puis-tester Plone ?<a class="headerlink" href="#ou-puis-tester-plone" title="Permalink to this headline">#</a></h2>
-<p><strong>Site de démonstration Plone 6 Classic UI</strong> : <a class="reference external" href="https://classic.demo.plone.org">https://classic.demo.plone.org</a></p>
-<p><strong>Site de démonstration Plone 6 Volto</strong> : <a class="reference external" href="https://demo.plone.org">https://demo.plone.org</a></p>
-</section>
-<section id="qui-utilise-plone">
-<h2>Qui utilise Plone ?<a class="headerlink" href="#qui-utilise-plone" title="Permalink to this headline">#</a></h2>
-<p><strong>Utilisation dans les universités (belges)</strong></p>
+<section id="javascript-patterns">
+<h2>Javascript Patterns<a class="headerlink" href="#javascript-patterns" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>University of Jyväskylä : <a class="reference external" href="https://www.jyu.fi">https://www.jyu.fi</a></p></li>
-<li><p>Université UGent : <a class="reference external" href="https://www.ugent.be">https://www.ugent.be</a></p></li>
-<li><p>Université KULeuven : <a class="reference external" href="https://www.kuleuven.be">https://www.kuleuven.be</a></p></li>
+<li><p>patternslib : <a class="reference external" href="https://patternslib.com/demos">https://patternslib.com/demos</a></p></li>
+<li><p>mockup : <a class="reference external" href="https://plone.github.io/mockup/dev/#pattern">https://plone.github.io/mockup/dev/#pattern</a></p></li>
+<li><p>liste des patterns présentes dans Plone : <a class="reference external" href="https://github.com/plone/mockup/blob/master/src/patterns.js">https://github.com/plone/mockup/blob/master/src/patterns.js</a></p></li>
 </ul>
-<p><strong>Utilisation en Région Wallonne</strong></p>
-<ul class="simple">
-<li><p>Communes et villes wallonnes gérés par IMIO : <a class="reference external" href="https://www.imio.be/imio-et-vous/qui-utilise-nos-applications">https://www.imio.be/imio-et-vous/qui-utilise-nos-applications</a></p></li>
-<li><p>Villes : <a class="reference external" href="https://www.namur.be">https://www.namur.be</a>, <a class="reference external" href="https://www.mons.be">https://www.mons.be</a>, <a class="reference external" href="https://www.liege.be">https://www.liege.be</a></p></li>
-</ul>
-<p><strong>Cas d’utilisation</strong></p>
-<ul class="simple">
-<li><p>création d’un site public (avec nombreux éditeurs et droits différenciés)</p></li>
-<li><p>création d’un intranet</p></li>
-<li><p>création d’application de workflow documentaire</p></li>
-<li><p>création de portails (formulaires et interface avec les applications métiers)</p></li>
-</ul>
-<p><strong>Identifier un site Plone</strong></p>
-<ul class="simple">
-<li><p>A l’aide de l’extension <em>Wappalyser</em> sur Firefox</p></li>
-<li><p>Plone est régulièrement utilisé comme solution d’édition (backend) avec un export sous forme statique. Dans ce cas il n’est pas possible d’identifier son utilisation.</p></li>
-</ul>
-</section>
-<section id="comment-apprendre-plone">
-<h2>Comment apprendre Plone ?<a class="headerlink" href="#comment-apprendre-plone" title="Permalink to this headline">#</a></h2>
-<p><strong>Formations en ligne</strong> : <a class="reference external" href="https://training.plone.org">https://training.plone.org</a></p>
-<p><strong>Documentation de référence</strong> : <a class="reference external" href="https://6.docs.plone.org/">https://6.docs.plone.org/</a>, <a class="reference external" href="https://5.docs.plone.org">https://5.docs.plone.org</a></p>
-<p><strong>Avec un Ploneur senior</strong> :-)</p>
-</section>
-<section id="pourquoi-plone">
-<h2>Pourquoi Plone ?<a class="headerlink" href="#pourquoi-plone" title="Permalink to this headline">#</a></h2>
-<p>Plone features : <a class="reference external" href="https://plone.org/why-plone/features">https://plone.org/why-plone/features</a></p>
-<ul class="simple">
-<li><p>Sécurité : <a class="reference external" href="https://nvd.nist.gov/vuln/search">https://nvd.nist.gov/vuln/search</a></p></li>
-<li><p>Modèle de permissions/rôles</p></li>
-<li><p>Moteur de workflow</p></li>
-<li><p>Moteur de recherche intégré</p></li>
-<li><p>API RESTfull (plone.restapi)</p></li>
-<li><p>Volto : Frontend en ReactJS</p></li>
-</ul>
-<section id="plone-vs-drupal-vs-wordpress">
-<h3>Plone vs Drupal vs Wordpress<a class="headerlink" href="#plone-vs-drupal-vs-wordpress" title="Permalink to this headline">#</a></h3>
-<p>Comparatif IdealWare 2017</p>
-<p><img alt="IdeaWare comparatif" src="../_images/plone-vs-drupal-vs-wordpress.png" /></p>
-</section>
 </section>
 </section>
 
@@ -548,20 +430,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Structure du cours</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="plone6-docker.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation avec Docker</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
