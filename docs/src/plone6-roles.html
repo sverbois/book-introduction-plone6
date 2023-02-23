@@ -403,8 +403,13 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#liste">
-     Liste
+    <a class="reference internal nav-link" href="#roles-crees-par-zope">
+     Rôles créés par Zope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roles-crees-par-plone">
+     Rôles créés par Plone
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -546,8 +551,13 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#liste">
-     Liste
+    <a class="reference internal nav-link" href="#roles-crees-par-zope">
+     Rôles créés par Zope
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roles-crees-par-plone">
+     Rôles créés par Plone
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -664,7 +674,7 @@ title="Print to PDF"
 <section id="modify-portal-content">
 <h4>Modify portal content<a class="headerlink" href="#modify-portal-content" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>droit de modifier de l’objet</p></li>
+<li><p>droit de modifier l’objet</p></li>
 <li><p>donne accès à l’onglet <em>Modifier</em></p></li>
 </ul>
 </section>
@@ -689,19 +699,24 @@ title="Print to PDF"
 <h2>Rôles<a class="headerlink" href="#roles" title="Permalink to this headline">#</a></h2>
 <p>Rôle = ensemble de permissions</p>
 <p>ZMI -&gt; security</p>
-<section id="liste">
-<h3>Liste<a class="headerlink" href="#liste" title="Permalink to this headline">#</a></h3>
+<section id="roles-crees-par-zope">
+<h3>Rôles créés par Zope<a class="headerlink" href="#roles-crees-par-zope" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Anonymous (Zope)</p></li>
-<li><p>Authenticated (Zope)</p></li>
-<li><p>Contributor (Plone) == Peut ajouter du contenu</p></li>
-<li><p>Editor (Plone)  == Peut modifier le contenu</p></li>
-<li><p>Manager (Zope) == root</p></li>
-<li><p>Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone</p></li>
+<li><p>Anonymous (Zope) : ce rôle est donné à toutes les requêtes (anonymes ou authentifiées)</p></li>
+<li><p>Authenticated (Zope) ce rôle est donné aux requêtes authentifiées</p></li>
 <li><p>Owner (Zope) : ce rôle est donné au créateur d’un contenu</p></li>
-<li><p>Reader (Plone) == Peut voir le contenu</p></li>
-<li><p>Reviewer (Plone) == Peut modérer le contenu</p></li>
-<li><p>Site Administrator (Plone) == Administrateur du site Plone</p></li>
+<li><p>Manager (Zope) : root</p></li>
+</ul>
+</section>
+<section id="roles-crees-par-plone">
+<h3>Rôles créés par Plone<a class="headerlink" href="#roles-crees-par-plone" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone</p></li>
+<li><p>Contributor (Plone) : les utilisateurs qui ont ce rôle peuvent ajouter du contenu</p></li>
+<li><p>Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenpe</p></li>
+<li><p>Reader (Plone) : les utilisateurs qui ont ce rôle peuvent  voir le contenu</p></li>
+<li><p>Editor (Plone)  : les utilisateurs qui ont ce rôle peuvent  modifier le contenu</p></li>
+<li><p>Site Administrator (Plone) : les utilisateurs qui ont ce rôle peuvent administrer le site Plone</p></li>
 </ul>
 </section>
 <section id="role-global">
@@ -726,11 +741,7 @@ Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&
 <section id="interface-zmi">
 <h4>Interface ZMI<a class="headerlink" href="#interface-zmi" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>ZMI -&gt; acl_users -&gt; portal_role_manager</p></li>
-</ul>
-<p>ou</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles">http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles</a></p></li>
+<li><p>ZMI -&gt; acl_users -&gt; portal_role_manager (ou <a class="reference external" href="http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles">http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles</a>)</p></li>
 </ul>
 </section>
 </section>
@@ -738,7 +749,7 @@ Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&
 <h3>Rôle local<a class="headerlink" href="#role-local" title="Permalink to this headline">#</a></h3>
 <section id="id1">
 <h4>Interface Plone<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
-<p>Contenu/Conteneur -&gt; Partage ou <a class="reference external" href="http://localhost:8080/plone/">http://localhost:8080/plone/</a><my-content>/sharing</p>
+<p>Contenu/Conteneur -&gt; Partage ou <a class="reference external" href="http://localhost:8080/Plone/">http://localhost:8080/Plone/</a>&lt;my-content&gt;/sharing</p>
 <ul class="simple">
 <li><p>Peut ajouter == Contributeur (Contributor) local</p></li>
 <li><p>Peut modifier == Rédacteur (Editor) local</p></li>
@@ -749,11 +760,7 @@ Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&
 <section id="id2">
 <h4>Interface ZMI<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>ZMI -&gt; <my-content> -&gt; Security -&gt; local roles</p></li>
-</ul>
-<p>ou</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://localhost:8080/Plone/">http://localhost:8080/Plone/</a><my-content>/manage_listLocalRoles</p></li>
+<li><p>ZMI -&gt; <my-content> -&gt; Security -&gt; local roles (ou <a class="reference external" href="http://localhost:8080/Plone/">http://localhost:8080/Plone/</a>&lt;my-content&gt;/manage_listLocalRoles)</p></li>
 </ul>
 <p><strong>Remarque</strong> : Il est possible de créer des rôles locaux dynamiques <a class="reference external" href="https://docs.plone.org/develop/plone/security/dynamic_roles.html">https://docs.plone.org/develop/plone/security/dynamic_roles.html</a></p>
 </section>

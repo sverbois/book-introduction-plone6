@@ -38,7 +38,7 @@ ZMI -> security
 
 ##### Modify portal content
 
-- droit de modifier de l'objet
+- droit de modifier l'objet
 - donne accès à l'onglet *Modifier*
 
 ##### List folder contents
@@ -59,18 +59,21 @@ Rôle = ensemble de permissions
 
 ZMI -> security
 
-### Liste
+### Rôles créés par Zope
 
-- Anonymous (Zope)
-- Authenticated (Zope)
-- Contributor (Plone) == Peut ajouter du contenu
-- Editor (Plone)  == Peut modifier le contenu
-- Manager (Zope) == root
-- Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone
+- Anonymous (Zope) : ce rôle est donné à toutes les requêtes (anonymes ou authentifiées)
+- Authenticated (Zope) ce rôle est donné aux requêtes authentifiées
 - Owner (Zope) : ce rôle est donné au créateur d'un contenu
-- Reader (Plone) == Peut voir le contenu
-- Reviewer (Plone) == Peut modérer le contenu
-- Site Administrator (Plone) == Administrateur du site Plone
+- Manager (Zope) : root
+
+### Rôles créés par Plone   
+
+- Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone
+- Contributor (Plone) : les utilisateurs qui ont ce rôle peuvent ajouter du contenu
+- Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenpe
+- Reader (Plone) : les utilisateurs qui ont ce rôle peuvent  voir le contenu
+- Editor (Plone)  : les utilisateurs qui ont ce rôle peuvent  modifier le contenu
+- Site Administrator (Plone) : les utilisateurs qui ont ce rôle peuvent administrer le site Plone
 
 ### Rôle global
 
@@ -79,10 +82,10 @@ ZMI -> security
 
 Utilisateur :
     Plone -> Configuration du site -> Utilisateurs et Groupes -> Utilisateurs -> Recherche d'un utilisateur -> Rôles
-    
+
 Groupe :
     Plone -> Configuration du site -> Utilisateurs et Groupes -> Groupes -> Rôles
-    
+
 - Contributeur (Contributor)
 - Rédacteur (Editor)
 - Membre (Member)
@@ -95,18 +98,13 @@ Lorsqu'un rôle global est donné à un utilisateur ou un groupe, il est valable
 
 ##### Interface ZMI
 
-- ZMI -> acl_users -> portal_role_manager
-
-ou
-
-- http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles
+- ZMI -> acl_users -> portal_role_manager (ou http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles)
 
 ### Rôle local
 
 ##### Interface Plone
 
-Contenu/Conteneur -> Partage ou http://localhost:8080/plone/<my-content>/sharing
-
+Contenu/Conteneur -> Partage ou http://localhost:8080/Plone/\<my-content\>/sharing
 
 - Peut ajouter == Contributeur (Contributor) local
 - Peut modifier == Rédacteur (Editor) local
@@ -115,11 +113,7 @@ Contenu/Conteneur -> Partage ou http://localhost:8080/plone/<my-content>/sharing
 
 ##### Interface ZMI
 
-- ZMI -> <my-content> -> Security -> local roles
-
-ou
-
-- http://localhost:8080/Plone/<my-content>/manage_listLocalRoles
+- ZMI -> <my-content> -> Security -> local roles (ou http://localhost:8080/Plone/\<my-content\>/manage_listLocalRoles)
 
 **Remarque** : Il est possible de créer des rôles locaux dynamiques <https://docs.plone.org/develop/plone/security/dynamic_roles.html>
 

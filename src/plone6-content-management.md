@@ -108,9 +108,9 @@ Une navigation automatique est créée à 3 endroits : onglets, portlet de navig
 - Plone -> Configuration du site -> Navigation
     + politique globale
     + par défaut, un onglet est créé pour chaque éléments à la racine du site
-- désactiver l'onglet "Accueil" : Plone -> Configuration du site -> Actions -> Portal tabs -> Accueil -> Cacher
 - exclure un contenu du menu de navigation : Contenu -> Modifier -> Paramètres -> Exclure de la navigation
 - configurer la portlet de navigation pour afficher le contenu d'un sous-dossier
+- désactiver l'onglet "Accueil" : Plone -> Configuration du site -> Actions -> Portal tabs -> Accueil -> Cacher
 
 ### Actions
 

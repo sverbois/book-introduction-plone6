@@ -39,9 +39,6 @@ Plone -> Configuration du site -> Règles -> Ajouter une règle
 - Groupe de l'utilisateur
 - Rôle de l'utilisateur
 
-### Exemple
-
-- envoyer un mail lors de l'ajout d'un nouveau contenu
 
 Affecter une règle sur un conteneur
 -----------------------------------
