@@ -1,5 +1,8 @@
+Installation
+============
+
 Installation avec Docker
-========================
+------------------------
 
 **Référence** : <https://6.docs.plone.org/install/containers/images/backend.html>
 
@@ -84,3 +87,41 @@ Créer et démarrer le container
         - type: bind
           source: ./seba
           target: /app/src/seba
+
+Installation avec *buildout*
+----------------------------
+
+**Référence** : <https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html>
+
+Installer les dépendances
+
+    Python >= 3.8 (3.11 est la plus performante)
+    libjpeg, libxml2, libxslt
+
+Créer la structure
+
+    plone6intro
+    └── configure.zcml
+
+avec le fichier *configure.zcml* suivant :
+
+    extends = https://dist.plone.org/release/6.0.1/versions.cfg
+    parts =
+        instance
+
+    [instance]
+    recipe = plone.recipe.zope2instance
+    user = admin:admin
+    http-address = 8080
+    eggs =
+        Plone
+
+Créer votre instance Plone
+
+    python3.11 -mvenv .
+    ./bin/pip install -r https://dist.plone.org/release/6.0.1/requirements.txt
+    ./bin/buildout
+
+Démarrer votre instance Plone
+
+    ./bin/instance fg  # mode développement

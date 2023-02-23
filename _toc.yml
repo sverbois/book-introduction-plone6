@@ -5,7 +5,7 @@ format: jb-book
 root: src/index
 chapters:
   - file: src/plone6-presentation
-  - file: src/plone6-docker
+  - file: src/plone6-installation
   - file: src/plone6-content-management
   - file: src/plone6-content-rules
   - file: src/plone6-users-and-groups

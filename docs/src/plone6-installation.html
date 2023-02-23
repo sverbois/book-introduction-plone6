@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Installation avec Docker &#8212; Introduction à Plone 6 Classic UI</title>
+    <title>Installation &#8212; Introduction à Plone 6 Classic UI</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -121,7 +121,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Installation avec Docker
+   Installation
   </a>
  </li>
  <li class="toctree-l1">
@@ -254,7 +254,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-docker.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-installation.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -282,7 +282,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/src/plone6-docker.md"
+        <a href="../_sources/src/plone6-installation.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -342,28 +342,43 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-et-demarrer-un-container-plone-6">
-   Créer et démarrer un container Plone 6
+  <a class="reference internal nav-link" href="#installation-avec-docker">
+   Installation avec Docker
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-et-demarrer-un-container-plone-6">
+     Créer et démarrer un container Plone 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
+     Créer un container Plone 6 avec stockage des données en dehors du container
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-des-modules-complementaires">
+     Créer un container Plone 6 avec des modules complémentaires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier">
+     Créer un container Plone 6 avec un thème dans le système de fichier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement">
+     Créer un container Plone 6 avec un module Python en développement
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
-   Créer un container Plone 6 avec stockage des données en dehors du container
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-des-modules-complementaires">
-   Créer un container Plone 6 avec des modules complémentaires
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier">
-   Créer un container Plone 6 avec un thème dans le système de fichier
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement">
-   Créer un container Plone 6 avec un module Python en développement
+  <a class="reference internal nav-link" href="#installation-avec-buildout">
+   Installation avec
+   <em>
+    buildout
+   </em>
   </a>
  </li>
 </ul>
@@ -375,7 +390,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Installation avec Docker</h1>
+                <h1>Installation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -386,28 +401,43 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-et-demarrer-un-container-plone-6">
-   Créer et démarrer un container Plone 6
+  <a class="reference internal nav-link" href="#installation-avec-docker">
+   Installation avec Docker
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-et-demarrer-un-container-plone-6">
+     Créer et démarrer un container Plone 6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
+     Créer un container Plone 6 avec stockage des données en dehors du container
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-des-modules-complementaires">
+     Créer un container Plone 6 avec des modules complémentaires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier">
+     Créer un container Plone 6 avec un thème dans le système de fichier
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement">
+     Créer un container Plone 6 avec un module Python en développement
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
-   Créer un container Plone 6 avec stockage des données en dehors du container
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-des-modules-complementaires">
-   Créer un container Plone 6 avec des modules complémentaires
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier">
-   Créer un container Plone 6 avec un thème dans le système de fichier
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement">
-   Créer un container Plone 6 avec un module Python en développement
+  <a class="reference internal nav-link" href="#installation-avec-buildout">
+   Installation avec
+   <em>
+    buildout
+   </em>
   </a>
  </li>
 </ul>
@@ -420,11 +450,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="installation-avec-docker">
-<h1>Installation avec Docker<a class="headerlink" href="#installation-avec-docker" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<section id="installation-avec-docker">
+<h2>Installation avec Docker<a class="headerlink" href="#installation-avec-docker" title="Permalink to this headline">#</a></h2>
 <p><strong>Référence</strong> : <a class="reference external" href="https://6.docs.plone.org/install/containers/images/backend.html">https://6.docs.plone.org/install/containers/images/backend.html</a></p>
 <section id="creer-et-demarrer-un-container-plone-6">
-<h2>Créer et démarrer un container Plone 6<a class="headerlink" href="#creer-et-demarrer-un-container-plone-6" title="Permalink to this headline">#</a></h2>
+<h3>Créer et démarrer un container Plone 6<a class="headerlink" href="#creer-et-demarrer-un-container-plone-6" title="Permalink to this headline">#</a></h3>
 <p>Créer la structure</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
 └── docker-compose.yml
@@ -445,7 +477,7 @@ title="Print to PDF"
 <p><strong>Attention</strong> : Les données stockées dans le site Plone sont à l’intérieur du conteneur docker. Si vous supprimer le conteneur, les données seront perdues.</p>
 </section>
 <section id="creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container">
-<h2>Créer un container Plone 6 avec stockage des données en dehors du container<a class="headerlink" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container" title="Permalink to this headline">#</a></h2>
+<h3>Créer un container Plone 6 avec stockage des données en dehors du container<a class="headerlink" href="#creer-un-container-plone-6-avec-stockage-des-donnees-en-dehors-du-container" title="Permalink to this headline">#</a></h3>
 <p>Créer la structure</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
 ├── data
@@ -470,7 +502,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creer-un-container-plone-6-avec-des-modules-complementaires">
-<h2>Créer un container Plone 6 avec des modules complémentaires<a class="headerlink" href="#creer-un-container-plone-6-avec-des-modules-complementaires" title="Permalink to this headline">#</a></h2>
+<h3>Créer un container Plone 6 avec des modules complémentaires<a class="headerlink" href="#creer-un-container-plone-6-avec-des-modules-complementaires" title="Permalink to this headline">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
   backend:
     image: plone/plone-backend:6.0.0.2
@@ -486,14 +518,14 @@ title="Print to PDF"
 </div>
 </section>
 <section id="creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier">
-<h2>Créer un container Plone 6 avec un thème dans le système de fichier<a class="headerlink" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier" title="Permalink to this headline">#</a></h2>
+<h3>Créer un container Plone 6 avec un thème dans le système de fichier<a class="headerlink" href="#creer-un-container-plone-6-avec-un-theme-dans-le-systeme-de-fichier" title="Permalink to this headline">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TODO
 </pre></div>
 </div>
 <p><strong>Remarques</strong> : Le thème doit se trouver dans le dossier <em>resources/theme/MyTheme</em> où <em>MyTheme</em> est le dossier qui contient votre thème.</p>
 </section>
 <section id="creer-un-container-plone-6-avec-un-module-python-en-developpement">
-<h2>Créer un container Plone 6 avec un module Python en développement<a class="headerlink" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement" title="Permalink to this headline">#</a></h2>
+<h3>Créer un container Plone 6 avec un module Python en développement<a class="headerlink" href="#creer-un-container-plone-6-avec-un-module-python-en-developpement" title="Permalink to this headline">#</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>services:
   backend:
     image: plone/plone-backend:6.0.0.2
@@ -508,6 +540,44 @@ title="Print to PDF"
     - type: bind
       source: ./seba
       target: /app/src/seba
+</pre></div>
+</div>
+</section>
+</section>
+<section id="installation-avec-buildout">
+<h2>Installation avec <em>buildout</em><a class="headerlink" href="#installation-avec-buildout" title="Permalink to this headline">#</a></h2>
+<p><strong>Référence</strong> : <a class="reference external" href="https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html">https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html</a></p>
+<p>Installer les dépendances</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python &gt;= 3.8 (3.11 est la plus performante)
+libjpeg, libxml2, libxslt
+</pre></div>
+</div>
+<p>Créer la structure</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
+└── configure.zcml
+</pre></div>
+</div>
+<p>avec le fichier <em>configure.zcml</em> suivant :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>extends = https://dist.plone.org/release/6.0.1/versions.cfg
+parts =
+    instance
+
+[instance]
+recipe = plone.recipe.zope2instance
+user = admin:admin
+http-address = 8080
+eggs =
+    Plone
+</pre></div>
+</div>
+<p>Créer votre instance Plone</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3.11 -mvenv .
+./bin/pip install -r https://dist.plone.org/release/6.0.1/requirements.txt
+./bin/buildout
+</pre></div>
+</div>
+<p>Démarrer votre instance Plone</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./bin/instance fg  # mode développement
 </pre></div>
 </div>
 </section>
