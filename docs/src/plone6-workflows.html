@@ -643,15 +643,15 @@ title="Print to PDF"
 <li><p><em>comment_one_state_workflow</em> et <em>comment_review_workflow</em> sont des workflows utilisés pour les commentaires</p></li>
 <li><p><em>folder_workflow</em> et <em>plone_workflow</em> sont encore présents pour des raisons historiques</p></li>
 <li><p><em>intranet_workflow</em>” et <em>intranet_folder_workflow</em> ne sont pas très bien pensés mais peuvent servir de base pour un site avec intranet</p></li>
-<li><p><em>simple_publication_workflow</em> est un bon workflow de base avec modération</p></li>
-<li><p><em>one_state_workflow</em> est un workflow à état unique pratique pour “oublier” la notion de workflow dans Plone</p></li>
+<li><p><em>simple_publication_workflow</em> est un bon workflow de base avec modération (workflow par défaut de Plone)</p></li>
+<li><p><em>one_state_workflow</em> est un workflow à état unique à utiliser pour “désactiver” la notion de workflow (les contenus sont toujours visibles)</p></li>
 </ul>
-<p><strong>Conclusion</strong> : la réalisation d’un workflow personnalisé est presque toujours indispensable dans vos sites Plone</p>
+<p><strong>Conclusion</strong> : la réalisation d’un workflow personnalisé est presque toujours indispensable dans vos projets Plone</p>
 </section>
 <section id="permissions-modifiees-par-le-workflow">
 <h3>Permissions modifiées par le workflow<a class="headerlink" href="#permissions-modifiees-par-le-workflow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; Permissions</p></li>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; Permissions</p></li>
 <li><p>Voir le contenu : Access contents information + View</p></li>
 <li><p>Modifier le contenu : Modify portal content</p></li>
 </ul>
@@ -659,15 +659,15 @@ title="Print to PDF"
 <section id="etats-du-workflow">
 <h3>Etats du workflow<a class="headerlink" href="#etats-du-workflow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; States</p></li>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; States</p></li>
 <li><p>l’étoile indique l’état initial</p></li>
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; States -&gt; <my-state> -&gt; Permissions</p></li>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; States -&gt; &lt;my-state&gt; -&gt; Permissions</p></li>
 </ul>
 </section>
 <section id="transitions-du-workflow">
 <h3>Transitions du workflow<a class="headerlink" href="#transitions-du-workflow" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; Transitions</p></li>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; Transitions</p></li>
 <li><p>caractérisée par un état d’arrivée (pas de début) et protégée par une permission d’utilisation</p></li>
 </ul>
 </section>
@@ -704,17 +704,17 @@ title="Print to PDF"
 </section>
 <section id="realisation">
 <h4>Réalisation<a class="headerlink" href="#realisation" title="Permalink to this headline">#</a></h4>
-<p>Utiliser <em>simple_publication_workflow</em> comme base pour réaliser <em>eicvn_workflow</em></p>
+<p>Utiliser <em>simple_publication_workflow</em> comme base pour réaliser <em>myproject_workflow</em></p>
 <p><strong>états</strong></p>
 <ul class="simple">
-<li><p>private : “View” et “Access contents information” uniquement pour “Contributor”, “Editor”, “Manager”, “Owner”</p></li>
-<li><p>internal : “View” et “Access contents information” = état “private” + “Member”</p></li>
-<li><p>public : “View” et “”Access contents information” = état “private” + “Anonymous”</p></li>
+<li><p>draft : “View” et “Access contents information” uniquement pour “Contributor”, “Editor”, “Manager”, “Owner”</p></li>
+<li><p>internal : “View” et “Access contents information” = état “draft” + “Member”</p></li>
+<li><p>public : “View” et “”Access contents information” = état “draft” + “Anonymous”</p></li>
 </ul>
 <p><strong>transitions</strong></p>
 <ul class="simple">
 <li><p>make_internal</p></li>
-<li><p>make_private</p></li>
+<li><p>make_draft</p></li>
 <li><p>make_public</p></li>
 </ul>
 </section>
@@ -730,7 +730,7 @@ title="Print to PDF"
 <section id="id1">
 <h4>Réalisation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
-<li><p>Affecter <em>eicvn_workflow</em> au type de contenu <em>Folder</em></p></li>
+<li><p>Affecter <em>myproject_workflow</em> au type de contenu <em>Folder</em></p></li>
 <li><p>N’affecter aucun workflow aux contenus (pages, fichiers, images). Ils hériteront des droits du dossier parent.</p></li>
 </ul>
 </section>
@@ -750,37 +750,37 @@ il faut utiliser la fonction “Update security settings” de ZMI -&gt; portal_
 </ul>
 <section id="exemple">
 <h3>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">#</a></h3>
-<p>Intranet avec 3 groupes : membres, comité exécutif, direction</p>
+<p>Intranet avec 3 groupes : Membres, Conseil, Bureau</p>
 <ol class="simple">
-<li><p>Créer les groupes “Membres”, “Comité”, “Direction” dans Plone</p></li>
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; Groups</p>
+<li><p>Créer les groupes “Membres (members)”, “Conseil (council)”, “Bureau (board)” dans Plone</p></li>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; Groups</p>
 <ul class="simple">
-<li><p>Add a managed group : “Membres”, “Comité”, “Direction”</p></li>
+<li><p>Add a managed group : “Membres”, “Conseil”, “Bureau”</p></li>
 <li><p>Roles Mapped to Groups : “Reader”</p></li>
 </ul>
 </li>
-<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; <my-workflow> -&gt; States</p>
+<li><p>ZMI -&gt; portal_workflows -&gt; Workflows -&gt; Contents -&gt; &lt;my-workflow&gt; -&gt; States</p>
 <ul class="simple">
-<li><p>private</p></li>
+<li><p>draft</p></li>
 <li><p>internal_members</p></li>
-<li><p>internal_committee</p></li>
-<li><p>internal_direction</p></li>
+<li><p>internal_council</p></li>
+<li><p>internal_board</p></li>
 </ul>
 </li>
 <li><p>Configurer l’onglet “Permissions” et “Groups” pour chacun des états</p>
 <ul class="simple">
-<li><p>l’onglet permission est identique pour les 3 états : internal_members, internal_committee, internal_direction</p></li>
-<li><p>“Direction” a le rôle “Reader” dans l’état “internal_direction”</p></li>
-<li><p>“Direction” et “Comité” ont le rôle “Reader” dans l’état “internal_committee”</p></li>
-<li><p>“Direction”, “Comité” et “Membres” ont le rôle “Reader” dans l’état “internal_members”</p></li>
+<li><p>l’onglet permission est identique pour les 3 états : internal_members, internal_council, internal_board</p></li>
+<li><p>“Bureau” a le rôle “Reader” dans l’état “internal_board”</p></li>
+<li><p>“Bureau” et “Conseil” ont le rôle “Reader” dans l’état “internal_council”</p></li>
+<li><p>“Bureau”, “Conseil” et “Membres” ont le rôle “Reader” dans l’état “internal_members”</p></li>
 </ul>
 </li>
 <li><p>Ajouter les transitions</p>
 <ul class="simple">
-<li><p>make_private</p></li>
+<li><p>make_draft</p></li>
 <li><p>make_internal_members</p></li>
-<li><p>make_internal_committee</p></li>
-<li><p>make_internal_direction</p></li>
+<li><p>make_internal_council</p></li>
+<li><p>make_internal_board</p></li>
 </ul>
 </li>
 </ol>

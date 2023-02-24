@@ -32,26 +32,26 @@ Analyse des Workflows existants
 -  *comment_one_state_workflow* et *comment_review_workflow* sont des workflows utilisés pour les commentaires
 - *folder_workflow* et *plone_workflow* sont encore présents pour des raisons historiques
 - *intranet_workflow*" et *intranet_folder_workflow* ne sont pas très bien pensés mais peuvent servir de base pour un site avec intranet
-- *simple_publication_workflow* est un bon workflow de base avec modération
-- *one_state_workflow* est un workflow à état unique pratique pour "oublier" la notion de workflow dans Plone
+- *simple_publication_workflow* est un bon workflow de base avec modération (workflow par défaut de Plone)
+- *one_state_workflow* est un workflow à état unique à utiliser pour "désactiver" la notion de workflow (les contenus sont toujours visibles)
 
-**Conclusion** : la réalisation d'un workflow personnalisé est presque toujours indispensable dans vos sites Plone
+**Conclusion** : la réalisation d'un workflow personnalisé est presque toujours indispensable dans vos projets Plone
 
 ### Permissions modifiées par le workflow
 
-- ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> Permissions
+- ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> Permissions
 - Voir le contenu : Access contents information + View
 - Modifier le contenu : Modify portal content
 
 ### Etats du workflow
 
-- ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> States
+- ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> States
 - l'étoile indique l'état initial
--  ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> States -> <my-state> -> Permissions
+-  ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> States -> \<my-state\> -> Permissions
 
 ### Transitions du workflow
 
-- ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> Transitions
+- ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> Transitions
 - caractérisée par un état d'arrivée (pas de début) et protégée par une permission d'utilisation
 
 Modifier un workflow
@@ -71,7 +71,7 @@ Ajouter un workflow
     1. Permissions
     2. States
     3. Transitions
-    
+
 - activer le nouveau workflow dans l'interface Plone (Plone -> Configuration du site -> Types)
 
 ### Exemple 1
@@ -84,18 +84,18 @@ Des dossiers qui ne contiennent que des contenus internes doivent pouvoir être 
 
 #### Réalisation
 
-Utiliser *simple_publication_workflow* comme base pour réaliser *eicvn_workflow*
+Utiliser *simple_publication_workflow* comme base pour réaliser *myproject_workflow*
 
 **états**
 
-- private : "View" et "Access contents information" uniquement pour "Contributor", "Editor", "Manager", "Owner"
-- internal : "View" et "Access contents information" = état "private" + "Member"
-- public : "View" et ""Access contents information" = état "private" + "Anonymous"
+- draft : "View" et "Access contents information" uniquement pour "Contributor", "Editor", "Manager", "Owner"
+- internal : "View" et "Access contents information" = état "draft" + "Member"
+- public : "View" et ""Access contents information" = état "draft" + "Anonymous"
 
 **transitions**
 
 - make_internal
-- make_private
+- make_draft
 - make_public
 
 #### Membres avec cotisation
@@ -110,7 +110,7 @@ La visibilité des contenus (pages, fichiers, images) est gérée par la visibil
 
 #### Réalisation
 
-- Affecter *eicvn_workflow* au type de contenu *Folder*
+- Affecter *myproject_workflow* au type de contenu *Folder*
 - N'affecter aucun workflow aux contenus (pages, fichiers, images). Ils hériteront des droits du dossier parent.
 
 ### Ajustement
@@ -127,34 +127,34 @@ Workflows, Groupes et Rôles locaux
 
 ### Exemple
 
-Intranet avec 3 groupes : membres, comité exécutif, direction
+Intranet avec 3 groupes : Membres, Conseil, Bureau
 
-1. Créer les groupes "Membres", "Comité", "Direction" dans Plone
-2. ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> Groups
+1. Créer les groupes "Membres (members)", "Conseil (council)", "Bureau (board)" dans Plone
+2. ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> Groups
 
-    - Add a managed group : "Membres", "Comité", "Direction"
+    - Add a managed group : "Membres", "Conseil", "Bureau"
     - Roles Mapped to Groups : "Reader"
-    
-3. ZMI -> portal_workflows -> Workflows -> Contents -> <my-workflow> -> States
 
-    - private
+3. ZMI -> portal_workflows -> Workflows -> Contents -> \<my-workflow\> -> States
+
+    - draft
     - internal_members
-    - internal_committee
-    - internal_direction
-    
+    - internal_council
+    - internal_board
+
 4. Configurer l'onglet "Permissions" et "Groups" pour chacun des états
 
-    - l'onglet permission est identique pour les 3 états : internal_members, internal_committee, internal_direction
-    - "Direction" a le rôle "Reader" dans l'état "internal_direction"
-    - "Direction" et "Comité" ont le rôle "Reader" dans l'état "internal_committee"
-    - "Direction", "Comité" et "Membres" ont le rôle "Reader" dans l'état "internal_members"
-    
+    - l'onglet permission est identique pour les 3 états : internal_members, internal_council, internal_board
+    - "Bureau" a le rôle "Reader" dans l'état "internal_board"
+    - "Bureau" et "Conseil" ont le rôle "Reader" dans l'état "internal_council"
+    - "Bureau", "Conseil" et "Membres" ont le rôle "Reader" dans l'état "internal_members"
+
 5. Ajouter les transitions
 
-    - make_private
+    - make_draft
     - make_internal_members
-    - make_internal_committee
-    - make_internal_direction
+    - make_internal_council
+    - make_internal_board
 
 
 Affecter localement des workflows différents
