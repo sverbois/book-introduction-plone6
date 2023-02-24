@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Utilisateurs et Groupes &#8212; Introduction à Plone 6 Classic UI</title>
+    <title>Browser view &#8212; Introduction à Plone 6 Classic UI</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Permissions et Rôles" href="plone6-roles.html" />
-    <link rel="prev" title="Actions automatiques (règles)" href="plone6-content-rules.html" />
+    <link rel="prev" title="Extensions" href="plone6-products.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -134,8 +133,8 @@ const thebe_selector_output = ".output, .cell_output"
    Actions automatiques (règles)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-users-and-groups.html">
    Utilisateurs et Groupes
   </a>
  </li>
@@ -164,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
    Extensions
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="plone6-view.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Browser view
   </a>
  </li>
@@ -259,7 +258,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-users-and-groups.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/sverbois/book-introduction-plone6/issues/new?title=Issue%20on%20page%20%2Fsrc/plone6-view.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -287,7 +286,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/src/plone6-users-and-groups.md"
+        <a href="../_sources/src/plone6-view.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -324,138 +323,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#utilisateurs">
-   Utilisateurs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#configuration-du-site">
-     Configuration du site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-utilisateur-dans-plone">
-     Ajouter un utilisateur dans Plone
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#autres-sources-d-utilisateurs">
-     Autres sources d’utilisateurs
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupes">
-   Groupes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-groupe-dans-plone">
-     Ajouter un groupe dans Plone
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-utilisateur-dans-un-groupe">
-     Ajouter un utilisateur dans un groupe
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#autres-sources-de-groupes">
-     Autres sources de groupes
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Utilisateurs et Groupes</h1>
+                <h1>Browser view</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#utilisateurs">
-   Utilisateurs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#configuration-du-site">
-     Configuration du site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-utilisateur-dans-plone">
-     Ajouter un utilisateur dans Plone
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#autres-sources-d-utilisateurs">
-     Autres sources d’utilisateurs
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#groupes">
-   Groupes
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-groupe-dans-plone">
-     Ajouter un groupe dans Plone
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ajouter-un-utilisateur-dans-un-groupe">
-     Ajouter un utilisateur dans un groupe
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#autres-sources-de-groupes">
-     Autres sources de groupes
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -463,55 +347,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="utilisateurs-et-groupes">
-<h1>Utilisateurs et Groupes<a class="headerlink" href="#utilisateurs-et-groupes" title="Permalink to this headline">#</a></h1>
-<section id="utilisateurs">
-<h2>Utilisateurs<a class="headerlink" href="#utilisateurs" title="Permalink to this headline">#</a></h2>
-<section id="configuration-du-site">
-<h3>Configuration du site<a class="headerlink" href="#configuration-du-site" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Plone -&gt; Configuration du site -&gt; Sécurité -&gt; Activer l’auto-inscription</p></li>
-<li><p>Plone -&gt; Configuration du site -&gt; Sécurité -&gt; Laisser les utilisateurs choisir leur mot de passe</p></li>
-<li><p>Plone -&gt; Configuration du site -&gt; Sécurité -&gt; Activer les dossiers d’utilisateur</p></li>
-</ul>
-</section>
-<section id="ajouter-un-utilisateur-dans-plone">
-<h3>Ajouter un utilisateur dans Plone<a class="headerlink" href="#ajouter-un-utilisateur-dans-plone" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Utilisateurs -&gt; Ajouter</p></li>
-</ul>
-</section>
-<section id="autres-sources-d-utilisateurs">
-<h3>Autres sources d’utilisateurs<a class="headerlink" href="#autres-sources-d-utilisateurs" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>LDAP/Active Directory : utiliser le module <a class="reference external" href="https://pypi.org/project/pas.plugins.ldap">https://pypi.org/project/pas.plugins.ldap</a></p></li>
-<li><p>Facebook/Google/SSO : utiliser le module <a class="reference external" href="https://pypi.org/project/pas.plugins.authomatic">https://pypi.org/project/pas.plugins.authomatic</a></p></li>
-</ul>
-<p><strong>Remarque</strong> : Plone fonctionne sans problème avec plusieurs sources d’utilisateurs actives en même temps.</p>
-</section>
-</section>
-<section id="groupes">
-<h2>Groupes<a class="headerlink" href="#groupes" title="Permalink to this headline">#</a></h2>
-<section id="ajouter-un-groupe-dans-plone">
-<h3>Ajouter un groupe dans Plone<a class="headerlink" href="#ajouter-un-groupe-dans-plone" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&gt; Ajouter un nouveau groupe</p></li>
-</ul>
-</section>
-<section id="ajouter-un-utilisateur-dans-un-groupe">
-<h3>Ajouter un utilisateur dans un groupe<a class="headerlink" href="#ajouter-un-utilisateur-dans-un-groupe" title="Permalink to this headline">#</a></h3>
-<p>Sélectionner un utilisateur et utiliser l’onglet “Groupes de l’utilisateur” ou
-sélectionner un groupe et utiliser l’onglet “Membres du groupe”</p>
-<p><strong>Remarque</strong> : Un groupe peut contenir d’autres groupes.</p>
-</section>
-<section id="autres-sources-de-groupes">
-<h3>Autres sources de groupes<a class="headerlink" href="#autres-sources-de-groupes" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>LDAP/Active Directory : utiliser le module <a class="reference external" href="https://pypi.org/project/pas.plugins.ldap">https://pypi.org/project/pas.plugins.ldap</a></p></li>
-</ul>
-<p><strong>Remarque</strong> : Plone fonctionne sans problème avec plusieurs sources de groupes actives en même temps.</p>
-</section>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="browser-view">
+<h1>Browser view<a class="headerlink" href="#browser-view" title="Permalink to this headline">#</a></h1>
+<p><strong>Référence</strong> : <a class="reference external" href="https://6.docs.plone.org/classic-ui/views.html">https://6.docs.plone.org/classic-ui/views.html</a></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -541,19 +379,12 @@ sélectionner un groupe et utiliser l’onglet “Membres du groupe”</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="plone6-content-rules.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="plone6-products.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Actions automatiques (règles)</p>
+            <p class="prev-next-title">Extensions</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="plone6-roles.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Permissions et Rôles</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

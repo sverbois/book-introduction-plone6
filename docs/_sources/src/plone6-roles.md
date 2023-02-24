@@ -52,6 +52,12 @@ ZMI -> security
 - donne accès à l'onglet *Partage*
 - fonctionne en collaboration avec les autres permissions *Sharing page: Delegate ...*
 
+##### Plone Site Setup
+
+- permet d'accéder au différents panneaux de configuration (control panel)
+- *Plone Site Setup: Users and Groups* : permet d'accéder à la configuration des utilisateurs et groupes
+- *Plone Site Setup: Themes* : permet d'accéder à la gestion des thèmes
+
 Rôles
 -----
 
@@ -70,12 +76,12 @@ ZMI -> security
 
 - Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone
 - Contributor (Plone) : les utilisateurs qui ont ce rôle peuvent ajouter du contenu
-- Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenpe
+- Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenu
 - Reader (Plone) : les utilisateurs qui ont ce rôle peuvent  voir le contenu
 - Editor (Plone)  : les utilisateurs qui ont ce rôle peuvent  modifier le contenu
 - Site Administrator (Plone) : les utilisateurs qui ont ce rôle peuvent administrer le site Plone
 
-### Rôle global
+### Rôle attribué globalement
 
 ##### Interface Plone
 
@@ -100,7 +106,7 @@ Lorsqu'un rôle global est donné à un utilisateur ou un groupe, il est valable
 
 - ZMI -> acl_users -> portal_role_manager (ou http://localhost:8080/Plone/acl_users/portal_role_manager/manage_roles)
 
-### Rôle local
+### Rôle attribué localement
 
 ##### Interface Plone
 

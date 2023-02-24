@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Nouveau types de contenu" href="plone6-content-types.html" />
+    <link rel="next" title="Workflows" href="plone6-workflows.html" />
     <link rel="prev" title="Utilisateurs et Groupes" href="plone6-users-and-groups.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -145,13 +145,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plone6-content-types.html">
-   Nouveau types de contenu
+  <a class="reference internal" href="plone6-workflows.html">
+   Workflows
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plone6-workflows.html">
-   Workflows
+  <a class="reference internal" href="plone6-content-types.html">
+   Nouveau types de contenu
   </a>
  </li>
  <li class="toctree-l1">
@@ -162,6 +162,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="plone6-products.html">
    Extensions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="plone6-view.html">
+   Browser view
   </a>
  </li>
 </ul>
@@ -393,6 +398,11 @@ title="Print to PDF"
        Sharing page: Delegate roles
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plone-site-setup">
+       Plone Site Setup
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -413,8 +423,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#role-global">
-     Rôle global
+    <a class="reference internal nav-link" href="#role-attribue-globalement">
+     Rôle attribué globalement
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -430,8 +440,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#role-local">
-     Rôle local
+    <a class="reference internal nav-link" href="#role-attribue-localement">
+     Rôle attribué localement
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -541,6 +551,11 @@ title="Print to PDF"
        Sharing page: Delegate roles
       </a>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plone-site-setup">
+       Plone Site Setup
+      </a>
+     </li>
     </ul>
    </li>
   </ul>
@@ -561,8 +576,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#role-global">
-     Rôle global
+    <a class="reference internal nav-link" href="#role-attribue-globalement">
+     Rôle attribué globalement
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -578,8 +593,8 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#role-local">
-     Rôle local
+    <a class="reference internal nav-link" href="#role-attribue-localement">
+     Rôle attribué localement
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -693,6 +708,14 @@ title="Print to PDF"
 <li><p>fonctionne en collaboration avec les autres permissions <em>Sharing page: Delegate …</em></p></li>
 </ul>
 </section>
+<section id="plone-site-setup">
+<h4>Plone Site Setup<a class="headerlink" href="#plone-site-setup" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>permet d’accéder au différents panneaux de configuration (control panel)</p></li>
+<li><p><em>Plone Site Setup: Users and Groups</em> : permet d’accéder à la configuration des utilisateurs et groupes</p></li>
+<li><p><em>Plone Site Setup: Themes</em> : permet d’accéder à la gestion des thèmes</p></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="roles">
@@ -713,14 +736,14 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Member (Plone) : ce rôle est donné à tous les utilisateurs ajoutés au site Plone</p></li>
 <li><p>Contributor (Plone) : les utilisateurs qui ont ce rôle peuvent ajouter du contenu</p></li>
-<li><p>Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenpe</p></li>
+<li><p>Reviewer (Plone) : les utilisateurs qui ont ce rôle peuvent  modérer le contenu</p></li>
 <li><p>Reader (Plone) : les utilisateurs qui ont ce rôle peuvent  voir le contenu</p></li>
 <li><p>Editor (Plone)  : les utilisateurs qui ont ce rôle peuvent  modifier le contenu</p></li>
 <li><p>Site Administrator (Plone) : les utilisateurs qui ont ce rôle peuvent administrer le site Plone</p></li>
 </ul>
 </section>
-<section id="role-global">
-<h3>Rôle global<a class="headerlink" href="#role-global" title="Permalink to this headline">#</a></h3>
+<section id="role-attribue-globalement">
+<h3>Rôle attribué globalement<a class="headerlink" href="#role-attribue-globalement" title="Permalink to this headline">#</a></h3>
 <section id="interface-plone">
 <h4>Interface Plone<a class="headerlink" href="#interface-plone" title="Permalink to this headline">#</a></h4>
 <p>Utilisateur :
@@ -745,8 +768,8 @@ Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&
 </ul>
 </section>
 </section>
-<section id="role-local">
-<h3>Rôle local<a class="headerlink" href="#role-local" title="Permalink to this headline">#</a></h3>
+<section id="role-attribue-localement">
+<h3>Rôle attribué localement<a class="headerlink" href="#role-attribue-localement" title="Permalink to this headline">#</a></h3>
 <section id="id1">
 <h4>Interface Plone<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>Contenu/Conteneur -&gt; Partage ou <a class="reference external" href="http://localhost:8080/Plone/">http://localhost:8080/Plone/</a>&lt;my-content&gt;/sharing</p>
@@ -840,10 +863,10 @@ Plone -&gt; Configuration du site -&gt; Utilisateurs et Groupes -&gt; Groupes -&
             <p class="prev-next-title">Utilisateurs et Groupes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="plone6-content-types.html" title="next page">
+    <a class='right-next' id="next-link" href="plone6-workflows.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Nouveau types de contenu</p>
+        <p class="prev-next-title">Workflows</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
