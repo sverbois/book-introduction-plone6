@@ -165,6 +165,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="plone6-addon.html">
+   Créer un add-on Plone
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="plone6-view.html">
    Browser view
   </a>
@@ -559,10 +564,10 @@ libjpeg, libxml2, libxslt
 </div>
 <p>Créer la structure</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>plone6intro
-└── configure.zcml
+└── buildout.cfg
 </pre></div>
 </div>
-<p>avec le fichier <em>configure.zcml</em> suivant :</p>
+<p>avec le fichier <em>buildout.cfg</em> suivant :</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>extends = https://dist.plone.org/release/6.0.1/versions.cfg
 parts =
     instance

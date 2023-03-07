@@ -80,8 +80,6 @@ Ajouter un workflow
 
 Les contenus sont soit publics, soit visibles par les membres, soit en cours de rédaction.
 
-Des dossiers qui ne contiennent que des contenus internes doivent pouvoir être cachés pour les visiteurs anonymes.
-
 #### Réalisation
 
 Utiliser *simple_publication_workflow* comme base pour réaliser *myproject_workflow*

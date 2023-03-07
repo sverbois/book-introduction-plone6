@@ -101,9 +101,9 @@ Installer les dépendances
 Créer la structure
 
     plone6intro
-    └── configure.zcml
+    └── buildout.cfg
 
-avec le fichier *configure.zcml* suivant :
+avec le fichier *buildout.cfg* suivant :
 
     extends = https://dist.plone.org/release/6.0.1/versions.cfg
     parts =

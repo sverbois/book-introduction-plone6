@@ -14,5 +14,6 @@ chapters:
   - file: src/plone6-content-types
   - file: src/plone6-restapi
   - file: src/plone6-products
+  - file: src/plone6-addon
   - file: src/plone6-view
   - file: src/plone6-theming
