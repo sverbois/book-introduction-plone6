@@ -1,8 +1,6 @@
-Installation
-============
+# Installation
 
-Installation avec Docker
-------------------------
+## Installation avec Docker
 
 **Référence** : <https://6.docs.plone.org/install/containers/images/backend.html>
 
@@ -13,7 +11,7 @@ Créer la structure
     plone6intro
     └── docker-compose.yml
 
-avec le fichier *docker-compose.yml* suivant :
+avec le fichier _docker-compose.yml_ suivant :
 
     services:
       backend:
@@ -35,7 +33,7 @@ Créer la structure
     ├── data
     └── docker-compose.yml
 
-avec le fichier *docker-compose.yml* suivant :
+avec le fichier _docker-compose.yml_ suivant :
 
     services:
       backend:
@@ -69,7 +67,7 @@ Créer et démarrer le container
 
     TODO
 
-**Remarques** : Le thème doit se trouver dans le dossier *resources/theme/MyTheme* où *MyTheme* est le dossier qui contient votre thème.
+**Remarques** : Le thème doit se trouver dans le dossier _resources/theme/MyTheme_ où _MyTheme_ est le dossier qui contient votre thème.
 
 ### Créer un container Plone 6 avec un module Python en développement
 
@@ -88,8 +86,7 @@ Créer et démarrer le container
           source: ./seba
           target: /app/src/seba
 
-Installation avec *buildout*
-----------------------------
+## Installation avec _buildout_
 
 **Référence** : <https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html>
 
@@ -103,9 +100,10 @@ Créer la structure
     plone6intro
     └── buildout.cfg
 
-avec le fichier *buildout.cfg* suivant :
+avec le fichier _buildout.cfg_ suivant :
 
-    extends = https://dist.plone.org/release/6.0.1/versions.cfg
+    [buildout]
+    extends = https://dist.plone.org/release/6.0.2/versions.cfg
     parts =
         instance
 
@@ -119,7 +117,7 @@ avec le fichier *buildout.cfg* suivant :
 Créer votre instance Plone
 
     python3.11 -mvenv .
-    ./bin/pip install -r https://dist.plone.org/release/6.0.1/requirements.txt
+    ./bin/pip install -r https://dist.plone.org/release/6.0.2/requirements.txt
     ./bin/buildout
 
 Démarrer votre instance Plone
