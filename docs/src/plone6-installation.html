@@ -165,8 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="plone6-addon.html">
-   Créer un add-on Plone
+  <a class="reference internal" href="plone6-project.html">
+   Créer un projet Plone
   </a>
  </li>
  <li class="toctree-l1">
@@ -568,7 +568,8 @@ libjpeg, libxml2, libxslt
 </pre></div>
 </div>
 <p>avec le fichier <em>buildout.cfg</em> suivant :</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>extends = https://dist.plone.org/release/6.0.1/versions.cfg
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[buildout]
+extends = https://dist.plone.org/release/6.0.2/versions.cfg
 parts =
     instance
 
@@ -582,7 +583,7 @@ eggs =
 </div>
 <p>Créer votre instance Plone</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3.11 -mvenv .
-./bin/pip install -r https://dist.plone.org/release/6.0.1/requirements.txt
+./bin/pip install -r https://dist.plone.org/release/6.0.2/requirements.txt
 ./bin/buildout
 </pre></div>
 </div>
