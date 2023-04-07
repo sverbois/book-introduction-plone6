@@ -417,8 +417,8 @@ title="Print to PDF"
 <h2>Projet Plone avec buildout<a class="headerlink" href="#projet-plone-avec-buildout" title="Permalink to this headline">#</a></h2>
 <p>Créer la structure suivante pour votre projet <em>achmed</em></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>achmed
-├── Makefile
-└── buildout.cfg
+├── buildout.cfg
+└── Makefile
 </pre></div>
 </div>
 <p>avec le fichier <em>Makefile</em> :</p>
@@ -467,6 +467,53 @@ make<span class="w"> </span>start
 </section>
 <section id="egg-python-pour-add-on-plone">
 <h2>Egg Python pour add-on Plone<a class="headerlink" href="#egg-python-pour-add-on-plone" title="Permalink to this headline">#</a></h2>
+<p>Ajouter le fichier <em><a class="reference external" href="http://setup.py">setup.py</a></em> :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from setuptools import find_packages
+from setuptools import setup
+
+setup(
+    name=&quot;achmed&quot;,
+    packages=find_packages(&quot;src&quot;),
+    package_dir={&quot;&quot;: &quot;src&quot;},
+    install_requires=[
+        &quot;Products.CMFPlone&quot;,
+    ],
+    entry_points=&quot;&quot;&quot;
+        [plone.autoinclude.plugin]
+        target = plone
+    &quot;&quot;&quot;,
+)
+</pre></div>
+</div>
+<p>modifié le buildout.cfg en ajoutant la ligne <em>develop = .</em> dans la section <em>buildout</em> et <em>achmed</em> dans la section <em>eggs</em>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[buildout]
+extends = https://dist.plone.org/release/6.0.2/versions.cfg
+show-picked-versions = true
+develop = .
+parts =
+    instance
+
+[instance]
+recipe = plone.recipe.zope2instance
+user = admin:admin
+http-address = 8080
+eggs =
+    Plone
+    achmed
+</pre></div>
+</div>
+<p>et créer un fichier <em>__init__.py</em> vide dans le sous-dossier <em>src/achmed</em>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>achmed
+├── buildout.cfg
+├── Makefile
+├── setup.py
+└── src
+    └── achmed
+        └── __init__.py
+</pre></div>
+</div>
+<p>Terminer par exécuter la commande <em>./bin/builout</em> pour enregistrer votre nouveau egg <em>achmed</em> dans le path de l’instance.
+Votre produit est maintenant reconnu par Python. Il faut encore le rendre visible par Plone.</p>
 </section>
 <section id="profiles-pour-l-installation-du-add-on">
 <h2>Profiles pour l’installation du add-on<a class="headerlink" href="#profiles-pour-l-installation-du-add-on" title="Permalink to this headline">#</a></h2>
