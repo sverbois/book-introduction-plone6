@@ -10,12 +10,12 @@ install: venv/bin/pip
 build: venv/bin/jupyter-book
 	venv/bin/jupyter-book build .
 
-.PHONY: build  # View HTML version
+.PHONY: html  # View HTML version
 html: _build/html/index.html
 	open _build/html/index.html
 
 .PHONY: docs  # Copy HTML version to docs folder
-docs: _build/html
+docs: build
 	rm -rf docs
 	mv _build/html docs
 	touch docs/.nojekyll
