@@ -426,7 +426,7 @@ title="Print to PDF"
 help:
     @cat &quot;Makefile&quot; | grep &#39;^.PHONY:&#39; | sed -e &quot;s/^.PHONY:/- make/&quot;
 
-.PHONY: install   Install environment
+.PHONY: install  # Install environment
 install: ./bin/pip
     ./bin/pip install -r https://dist.plone.org/release/6.0.2/requirements.txt
     ./bin/buildout -c buildout.cfg

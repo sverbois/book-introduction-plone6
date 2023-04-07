@@ -16,7 +16,7 @@ avec le fichier _Makefile_ :
     help:
         @cat "Makefile" | grep '^.PHONY:' | sed -e "s/^.PHONY:/- make/"
 
-    .PHONY: install   Install environment
+    .PHONY: install  # Install environment
     install: ./bin/pip
         ./bin/pip install -r https://dist.plone.org/release/6.0.2/requirements.txt
         ./bin/buildout -c buildout.cfg
