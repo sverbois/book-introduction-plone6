@@ -2,6 +2,7 @@
 
 **Référence** : <https://6.docs.plone.org/classic-ui/views.html>
 
+
 ## Une première browser view
 
 ## Javascript Patterns
