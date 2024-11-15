@@ -5,7 +5,7 @@ title: Introduction à Plone 6 Classic UI
 author: Sébastien Verbois
 logo: src/images/plone6-logo.png
 
-exclude_patterns: [_build, venv]
+exclude_patterns: [_build, venv, README.md]
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 #execute:

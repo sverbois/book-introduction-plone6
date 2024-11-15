@@ -28,5 +28,5 @@ venv/bin/jupyter-book: venv/bin/pip
 	venv/bin/pip install -r requirements.txt -c constraints.txt
 
 venv/bin/pip:
-	python3.9 -m venv venv
+	python3.11 -m venv venv
 

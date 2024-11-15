@@ -3,17 +3,24 @@
 
 format: jb-book
 root: src/index
-chapters:
-  - file: src/plone6-presentation
-  - file: src/plone6-installation
-  - file: src/plone6-content-management
-  - file: src/plone6-content-rules
-  - file: src/plone6-users-and-groups
-  - file: src/plone6-roles
-  - file: src/plone6-workflows
-  - file: src/plone6-content-types
-  - file: src/plone6-restapi
-  - file: src/plone6-products
-  - file: src/plone6-project
-  - file: src/plone6-view
-  - file: src/plone6-theming
+parts:
+  - chapters:
+      - file: src/plone6-presentation
+      - file: src/plone6-installation
+  - caption: "TTW"
+    chapters:
+      - file: src/plone6-content-management
+      - file: src/plone6-content-rules
+      - file: src/plone6-users-and-groups
+      - file: src/plone6-roles
+      - file: src/plone6-workflows
+      - file: src/plone6-content-types
+      - file: src/plone6-actions
+  - caption: "Extensions"
+    chapters:
+      - file: src/plone6-products
+      - file: src/plone6-restapi
+  - caption: "Dévelopement"
+    chapters:
+      - file: src/plone6-project
+      - file: src/plone6-view

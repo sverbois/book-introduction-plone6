@@ -88,11 +88,17 @@ Créer et démarrer le container
 
 ## Installation avec _buildout_
 
-**Référence** : <https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html>
+### Référence
+
+- <https://6.docs.plone.org/admin-guide/install-buildout.html>
+- <https://6.docs.plone.org/admin-guide/add-ons.html#buildout>
+- <https://6.docs.plone.org/admin-guide/override-core.html#buildout>
+
+### Résumé
 
 Installer les dépendances
 
-    Python >= 3.8 (3.11 est la plus performante)
+    Python >= 3.10
     libjpeg, libxml2, libxslt
 
 Créer la structure
@@ -123,3 +129,8 @@ Créer votre instance Plone
 Démarrer votre instance Plone
 
     ./bin/instance fg  # mode développement
+
+Changer le mot de passe *admin*
+
+    http://localhost:8080/acl_users/manage_main
+

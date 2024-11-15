@@ -20,10 +20,9 @@ Contenu du cours par sujet
 
 - Qu'est ce qu'un CMS ?
 - Où Plone est-il utilisé ?
-- Pourquoi Plone plutôt que Wordpress ou Drupal ?
 - Plone 6 Classic UI versus Plone 6 (Volto)
 
-### Installer Plone à l'aide de *Docker*
+### Installer Plone avec *Docker* ou *buildout*
 
 - Docker image : https://hub.docker.com/r/plone/plone-backend
 
@@ -44,13 +43,20 @@ Contenu du cours par sujet
 - Contenus correlés et mots clés
 - Listings personnalisés à l'aide de *Collections*
 
-### Actions automatiques (Règles)
+### Actions automatiques (règles)
 
 ### Utilisateurs, Rôles
 
 - Utilisateurs/Groupes
 - Permissions/Rôles
 - Rôles locaux et Rôles globaux
+
+### Workflows
+
+- Etudier les wokflows par défaut de Plone
+- Créer un workflow personnalisé
+- Workflows local (CMFPlacefulWorkflow)
+
 
 ### Créer un type de contenu et sa vue
 
@@ -62,11 +68,6 @@ Contenu du cours par sujet
 - Introduire les languages TAL/TALES/METAL
 - Créer une vue personnalisée pour un type de contenu
 
-### Workflows
-
-- Etudier les wokflows par défaut de Plone
-- Créer un workflow personnalisé
-- Workflows local (CMFPlacefulWorkflow)
 
 ### Plone REST API
 
@@ -89,18 +90,16 @@ Contenu du cours par sujet
 
 - https://pypi.org/project/collective.contentsections
 
+### Actions (lien des menus)
+
 ### Créer un add-on Plone
 
-### Generic setup
+#### Generic setup
 
 - Generic setup : ajouter un rôle
 - Generic setup : ajouter un type de contenu
 - Generic setup : ajouter un workflow
 
-### Jbot
+#### Jbot
 
-### Ajouter une vue pour un type de contenu
-
-### Concepts non abordés
-
-- portlet
+#### Ajouter une vue pour un type de contenu

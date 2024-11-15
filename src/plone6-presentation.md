@@ -28,9 +28,8 @@ Plone est un *Système de gestion de contenu* - *Content Management System (CMS)
 
 **Origine du nom Plone**
 
-- <https://docs.plone.org/intro/index.html#what-does-plone-mean-how-is-it-pronounced>
-- <https://open.spotify.com/album/5mrsUOyC7ltAy6V20oBov5?si=TN0Ns7iuQfWeVcR-GlU8xA>
 - <https://en.wikipedia.org/wiki/Plone_%28band%29>
+- <https://open.spotify.com/album/5mrsUOyC7ltAy6V20oBov5?si=TN0Ns7iuQfWeVcR-GlU8xA>
 
 
 Où puis-tester Plone ?
@@ -38,14 +37,15 @@ Où puis-tester Plone ?
 
 **Site de démonstration Plone 6 Classic UI** : <https://classic.demo.plone.org>
 
-**Site de démonstration Plone 6 Volto** : <https://demo.plone.org>
+**Site de démonstration Plone 6 Volto** : <https://https://volto.demo.plone.org/>
+
+**Site de démonstration Plone 6 Volto + Extensions populaires** : <https://https://volto.demo.plone.org/>
 
 Qui utilise Plone ?
 -------------------
 
-**Utilisation dans les universités (belges)**
+**Utilisation dans les universités**
 
-- University of Jyväskylä : <https://www.jyu.fi>
 - Université UGent : <https://www.ugent.be>
 - Université KULeuven : <https://www.kuleuven.be>
 
@@ -87,9 +87,3 @@ Plone features : <https://plone.org/why-plone/features>
 - Moteur de recherche intégré
 - API RESTfull (plone.restapi)
 - Volto : Frontend en ReactJS
-
-### Plone vs Drupal vs Wordpress
-
-Comparatif IdealWare 2017
-
-![IdeaWare comparatif](./images/plone-vs-drupal-vs-wordpress.png)

@@ -7,8 +7,8 @@ Workflows
 Documentation en ligne
 ----------------------
 
-- **Introduction** : <https://docs.plone.org/working-with-content/collaboration-and-workflow>
-- **Avancé** : <https://training.plone.org/5/workflow/index.html>
+- **Training** : <https://training.plone.org/workflow/>
+- **Référence** : <https://productsdcworkflow.readthedocs.io>
 
 Analyse des Workflows existants
 -------------------------------
